@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Home View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="HomeViewController" customModule="EasyBelote_iOS" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="redraw" insetsLayoutMarginsFromSafeArea="NO" image="home_bg" translatesAutoresizingMaskIntoConstraints="NO" id="s5M-yP-Sdo">
+                                <rect key="frame" x="0.0" y="100" width="375" height="567"/>
+                            </imageView>
+                            <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" image="generic_logo" translatesAutoresizingMaskIntoConstraints="NO" id="EHg-PA-W3h">
+                                <rect key="frame" x="125.5" y="50" width="124" height="90"/>
+                            </imageView>
+                            <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" image="home_icon" translatesAutoresizingMaskIntoConstraints="NO" id="pbg-4L-MSq">
+                                <rect key="frame" x="0.0" y="111" width="375" height="445"/>
+                            </imageView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2pt-Zf-qe4">
+                                <rect key="frame" x="0.0" y="475" width="375" height="192"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" semanticContentAttribute="forceRightToLeft" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ehy-rr-JAr">
+                                        <rect key="frame" x="141" y="82.5" width="93" height="27"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <inset key="contentEdgeInsets" minX="0.0" minY="0.0" maxX="20" maxY="0.0"/>
+                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="-40" maxY="0.0"/>
+                                        <state key="normal" title="Button" image="generic_right_arrow"/>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstItem="ehy-rr-JAr" firstAttribute="centerX" secondItem="2pt-Zf-qe4" secondAttribute="centerX" id="MUf-w9-I3K"/>
+                                    <constraint firstItem="ehy-rr-JAr" firstAttribute="centerY" secondItem="2pt-Zf-qe4" secondAttribute="centerY" id="rRP-6h-MO6"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="s5M-yP-Sdo" firstAttribute="top" secondItem="EHg-PA-W3h" secondAttribute="bottom" constant="-40" id="4C3-vx-LVy"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="s5M-yP-Sdo" secondAttribute="trailing" id="6dd-wh-XmX"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="2pt-Zf-qe4" secondAttribute="trailing" id="6j4-My-TB1"/>
+                            <constraint firstItem="2pt-Zf-qe4" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="AeL-7c-Qsi"/>
+                            <constraint firstItem="pbg-4L-MSq" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="TpW-do-dfV"/>
+                            <constraint firstItem="EHg-PA-W3h" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="bXL-We-yVs"/>
+                            <constraint firstItem="2pt-Zf-qe4" firstAttribute="top" secondItem="pbg-4L-MSq" secondAttribute="bottom" constant="-81" id="ddg-Af-FDc"/>
+                            <constraint firstItem="s5M-yP-Sdo" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" multiplier="0.85" id="lR1-C8-wf2"/>
+                            <constraint firstItem="pbg-4L-MSq" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="lpX-N4-Dbp"/>
+                            <constraint firstItem="pbg-4L-MSq" firstAttribute="top" relation="greaterThanOrEqual" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="91" id="mTg-Vu-59T"/>
+                            <constraint firstItem="s5M-yP-Sdo" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="nTC-XD-pzU"/>
+                            <constraint firstAttribute="bottom" secondItem="s5M-yP-Sdo" secondAttribute="bottom" id="rdh-dT-PPj"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="2pt-Zf-qe4" secondAttribute="bottom" id="uL3-2x-a9N"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                    <connections>
+                        <outlet property="btnNewGame" destination="ehy-rr-JAr" id="h7u-Fk-qNc"/>
+                        <segue destination="N9s-qx-XWc" kind="presentation" identifier="HomeVC to GameVC" modalTransitionStyle="crossDissolve" id="tBE-6x-xSZ"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="36" y="39"/>
+        </scene>
+        <!--Game-->
+        <scene sceneID="gbS-yA-mlD">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Game" id="N9s-qx-XWc" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="94H-Wx-Igc" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="623" y="26"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="generic_logo" width="124" height="90"/>
+        <image name="generic_right_arrow" width="9" height="15"/>
+        <image name="home_bg" width="375" height="538"/>
+        <image name="home_icon" width="375" height="445"/>
+    </resources>
+</document>

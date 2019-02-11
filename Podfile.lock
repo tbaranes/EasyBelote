@@ -1,0 +1,37 @@
+PODS:
+  - IBAnimatable (5.2.1)
+  - Reveal-SDK (20)
+  - SAConfettiView (0.1.9)
+
+DEPENDENCIES:
+  - IBAnimatable (from `https://github.com/IBAnimatable/IBAnimatable.git`)
+  - Reveal-SDK
+  - SAConfettiView (from `https://github.com/keisukeYamagishi/SAConfettiView`, branch `feature/swift4.2-fix-cocoapod`)
+
+SPEC REPOS:
+  https://github.com/cocoapods/specs.git:
+    - Reveal-SDK
+
+EXTERNAL SOURCES:
+  IBAnimatable:
+    :git: https://github.com/IBAnimatable/IBAnimatable.git
+  SAConfettiView:
+    :branch: feature/swift4.2-fix-cocoapod
+    :git: https://github.com/keisukeYamagishi/SAConfettiView
+
+CHECKOUT OPTIONS:
+  IBAnimatable:
+    :commit: 997eb2fa2e2d0087869bd8879c199eb1c5cb70b9
+    :git: https://github.com/IBAnimatable/IBAnimatable.git
+  SAConfettiView:
+    :commit: 1771932a2c81c4dd742b0857732193bbc7ec9b59
+    :git: https://github.com/keisukeYamagishi/SAConfettiView
+
+SPEC CHECKSUMS:
+  IBAnimatable: a46b835ec6875178516cf7e014a40194d6bfa3fc
+  Reveal-SDK: 43206a57f575632fd304e85385cc259b5d359e32
+  SAConfettiView: 1527923c3ecb6ab395a371fd8b854fed4019fee0
+
+PODFILE CHECKSUM: e1836834eb9e5bb3e4f227242936f546bce29f3e
+
+COCOAPODS: 1.5.3

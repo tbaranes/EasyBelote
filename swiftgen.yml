@@ -1,0 +1,26 @@
+strings:
+  inputs: EasyBelote iOS/EasyBelote iOS/Supporting Files/Localizables/en.lproj/Localizable.strings
+  outputs:
+    - templateName: structured-swift4
+      output: EasyBelote iOS/EasyBelote iOS/Supporting Files/Localizables.swift
+
+xcassets:
+  inputs:
+    - EasyBelote iOS/EasyBelote iOS/Supporting Files/Assets.xcassets
+  outputs:
+    - templateName: swift4
+      output: EasyBelote iOS/EasyBelote iOS/Supporting Files/Assets.swift
+
+colors:
+  inputs: Assets/app_colors.json
+  outputs:
+    templateName: swift4
+    output: EasyBelote iOS/EasyBelote iOS/Supporting Files/Colors.swift
+
+ib:
+  inputs: EasyBelote iOS/EasyBelote iOS/
+  outputs:
+    - templateName: scenes-swift4
+      output: EasyBelote iOS/EasyBelote iOS/Supporting Files/StoryboardScenes.swift
+    - templateName: segues-swift4
+      output: EasyBelote iOS/EasyBelote iOS/Supporting Files/StoryboardSegues.swift
