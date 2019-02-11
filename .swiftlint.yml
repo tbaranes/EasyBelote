@@ -1,0 +1,82 @@
+identifier_name:
+  min_length: 2
+  excluded: 
+   - x
+   - y
+   - T
+type_name:
+  excluded: 
+   - T
+superfluous_disable_command:
+  severity: warning
+line_length: 150
+file_length: 500
+number_separator:
+  minimum_length: 5
+disabled_rules:
+ - todo
+ - force_try
+ - force_cast
+ - superfluous_disable_command
+ - identifier_name
+private_outlet:
+    allow_private_set: true
+opt_in_rules:
+ - closure_spacing
+ - conditional_returns_on_newline
+ - empty_count
+ - explicit_init
+ - overridden_super_call
+ - redundant_nil_coalescing
+ - nimble_operator
+ - closure_end_indentation
+ - first_where
+ - attributes
+ - operator_usage_whitespace
+ - prohibited_super_call
+ - number_separator
+ - object_literal
+ - fatal_error_message
+ - private_outlet
+ - implicit_return
+ - multiline_parameters
+ - vertical_parameter_alignment_on_call
+ - unneeded_parentheses_in_closure_argument
+ - joined_default_parameter
+ - pattern_matching_keywords
+ - array_init
+ - contains_over_first_not_nil
+ - let_var_whitespace
+ - literal_expression_end_indentation
+ - multiline_arguments
+ - quick_discouraged_call
+ - quick_discouraged_focused_test
+ - quick_discouraged_pending_test
+ - sorted_first_last
+ - strict_fileprivate
+ - discouraged_object_literal
+ - discouraged_optional_boolean
+ - empty_string
+ - private_action
+ - unneeded_break_in_switch
+ - unused_enumerated
+ - unused_optional_binding
+ - valid_ibinspectable
+ - convenience_type
+ - empty_xctest_method 
+ - modifier_order
+ - multiline_function_chains
+ - single_test_class
+ - superfluous_disable_command
+ - unavailable_function
+ - no_fallthrough_only
+ - anyobject_protocol
+ - redundant_type_annotation
+ - collection_alignment
+ - identical_operands
+ - legacy_random
+ - toggle_bool
+ - unused_private_declaration
+ - unused_import
+included:
+ - ./

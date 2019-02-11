@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="TeamRoundView" customModule="EasyBelote_iOS" customModuleProvider="target">
+            <connections>
+                <outlet property="imageViewBidder" destination="waW-S0-qcs" id="G0F-3j-WOV"/>
+                <outlet property="labelTeam" destination="R2E-Li-TAz" id="4QM-PW-7bf"/>
+                <outlet property="stackViewDeclarations" destination="s78-KR-zRD" id="XGU-a8-cEv"/>
+                <outlet property="textFieldScore" destination="ATp-CG-8jK" id="D6p-GV-J2M"/>
+                <outlet property="viewTeam" destination="esX-f1-fLz" id="qdN-wP-1xK"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="195"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="R3Q-Ei-Pow">
+                    <rect key="frame" x="10" y="42.5" width="355" height="110"/>
+                    <subviews>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="esX-f1-fLz" customClass="HighlightableView" customModule="EasyBelote_iOS" customModuleProvider="target">
+                            <rect key="frame" x="0.0" y="0.0" width="355" height="18"/>
+                            <subviews>
+                                <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" alignment="center" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="BoF-cB-mVu">
+                                    <rect key="frame" x="140.5" y="0.0" width="74" height="18"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="R2E-Li-TAz">
+                                            <rect key="frame" x="0.0" y="0.0" width="40" height="18"/>
+                                            <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" image="player_bidding" translatesAutoresizingMaskIntoConstraints="NO" id="waW-S0-qcs">
+                                            <rect key="frame" x="60" y="2" width="14" height="14"/>
+                                        </imageView>
+                                    </subviews>
+                                </stackView>
+                            </subviews>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <constraints>
+                                <constraint firstAttribute="bottom" secondItem="BoF-cB-mVu" secondAttribute="bottom" id="FjZ-w1-8FU"/>
+                                <constraint firstItem="BoF-cB-mVu" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="esX-f1-fLz" secondAttribute="leading" constant="10" id="fbb-ah-TPT"/>
+                                <constraint firstItem="BoF-cB-mVu" firstAttribute="top" secondItem="esX-f1-fLz" secondAttribute="top" id="kCe-Vy-ner"/>
+                                <constraint firstItem="BoF-cB-mVu" firstAttribute="centerX" secondItem="esX-f1-fLz" secondAttribute="centerX" id="l85-B7-jzw"/>
+                                <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="BoF-cB-mVu" secondAttribute="trailing" constant="10" id="uMt-fq-qvl"/>
+                            </constraints>
+                        </view>
+                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ATp-CG-8jK">
+                            <rect key="frame" x="0.0" y="28" width="355" height="42"/>
+                            <color key="textColor" red="0.2901960784" green="0.2901960784" blue="0.2901960784" alpha="1" colorSpace="calibratedRGB"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="35"/>
+                            <textInputTraits key="textInputTraits" keyboardType="numberPad" returnKeyType="go"/>
+                        </textField>
+                        <stackView opaque="NO" contentMode="scaleToFill" placeholderIntrinsicWidth="355" placeholderIntrinsicHeight="30" axis="vertical" distribution="fillEqually" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="s78-KR-zRD">
+                            <rect key="frame" x="0.0" y="80" width="355" height="30"/>
+                        </stackView>
+                    </subviews>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstItem="esX-f1-fLz" firstAttribute="leading" secondItem="R3Q-Ei-Pow" secondAttribute="leading" id="3lL-KZ-Ee5"/>
+                        <constraint firstItem="s78-KR-zRD" firstAttribute="leading" secondItem="R3Q-Ei-Pow" secondAttribute="leading" id="AXg-23-0Ia"/>
+                        <constraint firstItem="ATp-CG-8jK" firstAttribute="top" secondItem="esX-f1-fLz" secondAttribute="bottom" constant="10" id="FE4-Bj-i8a"/>
+                        <constraint firstItem="esX-f1-fLz" firstAttribute="top" secondItem="R3Q-Ei-Pow" secondAttribute="top" id="KT2-9k-rcw"/>
+                        <constraint firstItem="ATp-CG-8jK" firstAttribute="leading" secondItem="R3Q-Ei-Pow" secondAttribute="leading" id="XQk-V0-Jdx"/>
+                        <constraint firstAttribute="trailing" secondItem="s78-KR-zRD" secondAttribute="trailing" id="ZwJ-Uw-GZW"/>
+                        <constraint firstAttribute="trailing" secondItem="ATp-CG-8jK" secondAttribute="trailing" id="cVH-Ps-Rdb"/>
+                        <constraint firstAttribute="bottom" secondItem="s78-KR-zRD" secondAttribute="bottom" id="crw-fi-cjp"/>
+                        <constraint firstItem="s78-KR-zRD" firstAttribute="top" secondItem="ATp-CG-8jK" secondAttribute="bottom" constant="10" id="dW3-GC-Tjz"/>
+                        <constraint firstAttribute="trailing" secondItem="esX-f1-fLz" secondAttribute="trailing" id="ir1-46-MpF"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstItem="R3Q-Ei-Pow" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="n9T-pi-jmc"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="R3Q-Ei-Pow" secondAttribute="trailing" constant="10" id="p05-XW-nrp"/>
+                <constraint firstItem="R3Q-Ei-Pow" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="10" id="tHN-h2-kpS"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <point key="canvasLocation" x="53.600000000000001" y="-166.8665667166417"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="player_bidding" width="14" height="14"/>
+    </resources>
+</document>
