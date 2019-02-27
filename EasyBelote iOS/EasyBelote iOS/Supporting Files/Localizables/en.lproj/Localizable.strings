@@ -7,10 +7,12 @@
 "new_game.nb_points" = "Number of points";
 "new_game.nb_points_placeholder" = "1001";
 "new_game.declarations" = "Declarations";
+"new_game.coinche" = "Coinche";
 "new_game.start_game" = "Start game";
 "game.bidding" = "Who's bidding?";
 "game.round.save" = "Save";
 "game.round.enter_score" = "Score";
+"game.round.enter_contract" = "Contract";
 "game.round.declaration.belote" = "Belote & re";
 "game.round.declaration.capot" = "Capot";
 "game.round.declaration.tierce" = "Tierce";
@@ -19,3 +21,5 @@
 "game.round.declaration.square" = "Square";
 "game.round.declaration.squareNines" = "4 of nines";
 "game.round.declaration.squareJacks" = "4 of jacks";
+"game.round.declaration.coinche" = "Coinche";
+"game.round.declaration.surcoinche" = "Surcoinche";

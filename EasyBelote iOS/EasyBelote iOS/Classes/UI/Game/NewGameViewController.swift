@@ -24,6 +24,9 @@ final class NewGameViewController: UIViewController {
     @IBOutlet private weak var labelDeclarations: UILabel!
     @IBOutlet private weak var switchDeclarations: UISwitch!
 
+    @IBOutlet private weak var labelCoinche: UILabel!
+    @IBOutlet private weak var switchCoinche: UISwitch!
+
     @IBOutlet private weak var btnStartGame: UIButton!
 
     // MARK: Properties
@@ -76,6 +79,8 @@ extension NewGameViewController {
 
         labelDeclarations.text = L10n.NewGame.declarations.uppercased()
         btnStartGame.isEnabled = game.canStartGame
+
+        labelCoinche.text = L10n.NewGame.coinche.uppercased()
         btnStartGame.setTitle(L10n.NewGame.startGame, for: .normal)
     }
 
@@ -85,6 +90,7 @@ extension NewGameViewController {
             self.textFieldPlayers.first { $0.tag == player.id }?.text = player.name
         }
         switchDeclarations.isOn = game.isDeclarationsEnabled
+        switchCoinche.isOn = game.isPlayingCoinche
     }
 
 }
@@ -105,6 +111,7 @@ extension NewGameViewController {
 
         textFieldNbPoints.addTarget(self, action: #selector(nbPointsEditingChanged(_:)), for: .editingChanged)
         switchDeclarations.addTarget(self, action: #selector(declarationsValueChanged), for: .valueChanged)
+        switchCoinche.addTarget(self, action: #selector(coincheValueChanged), for: .valueChanged)
         btnStartGame.addTarget(self, action: #selector(startGamePressed), for: .touchUpInside)
     }
 
@@ -137,6 +144,11 @@ extension NewGameViewController {
     @objc
     private func declarationsValueChanged(_ sender: UISwitch) {
         game.isDeclarationsEnabled = sender.isOn
+    }
+
+    @objc
+    private func coincheValueChanged(_ sender: UISwitch) {
+        game.isPlayingCoinche = sender.isOn
     }
 
     @objc

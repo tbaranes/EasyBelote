@@ -33,6 +33,10 @@ final class DeclarationButton: AnimatableButton, NibLoadable {
                 title = L10n.Game.Round.Declaration.squareNines
             case .squareJacks:
                 title = L10n.Game.Round.Declaration.squareJacks
+            case .coinche:
+                title = L10n.Game.Round.Declaration.coinche
+            case .surcoinche:
+                title = L10n.Game.Round.Declaration.surcoinche
             }
             setTitle(title.uppercased(), for: .normal)
         }

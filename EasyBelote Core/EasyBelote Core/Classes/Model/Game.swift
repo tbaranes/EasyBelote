@@ -22,6 +22,7 @@ public final class Game: NSObject {
     public var teams: [[Player]]
     public var nbPoints: Int
     public var isDeclarationsEnabled: Bool
+    public var isPlayingCoinche: Bool
 
     @objc dynamic public var rounds = [Round]()
     @objc dynamic public var currentDealerId: Int
@@ -37,6 +38,7 @@ public final class Game: NSObject {
         }
         nbPoints = userDefaults[.nbPoints] > 0 ? userDefaults[.nbPoints] : 1001
         isDeclarationsEnabled = userDefaults[.isDeclarationsEnabled]
+        isPlayingCoinche = userDefaults[.isPlayingCoinche]
 
         rounds = []
         currentDealerId = 0
@@ -48,6 +50,7 @@ public final class Game: NSObject {
         userDefaults[.players] = allPlayers
         userDefaults[.nbPoints] = nbPoints
         userDefaults[.isDeclarationsEnabled] = isDeclarationsEnabled
+        userDefaults[.isPlayingCoinche] = isPlayingCoinche
 
         gameState = GameState.playing.rawValue
     }
@@ -68,7 +71,7 @@ extension Game {
 
     public var availableDeclarations: [Declaration] {
         if isDeclarationsEnabled {
-            return Declaration.allCases
+            return Declaration.teamDeclarations
         }
         return Declaration.permanentDeclarations.compactMap { Declaration(rawValue: $0) }
     }
@@ -76,6 +79,7 @@ extension Game {
     public func makeNewRound(bidderId: Int) -> Round {
         return Round(teams: [TeamRound(id: 0, isBidder: bidderId % 2 == 0),
                              TeamRound(id: 1, isBidder: bidderId % 2 == 1)],
+                     isPlayingCoinche: isPlayingCoinche,
                      pointsHanging: rounds.last?.nextRoundPointsHanging ?? 0)
     }
 
@@ -115,4 +119,5 @@ public extension DefaultsKeys {
     static let players = DefaultsKey<[Player]?>("teams")
     static let nbPoints = DefaultsKey<Int>("nb_points")
     static let isDeclarationsEnabled = DefaultsKey<Bool>("is_declarations_enabled")
+    static let isPlayingCoinche = DefaultsKey<Bool>("is_coinche")
 }
