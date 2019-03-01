@@ -89,6 +89,13 @@ extension Round {
 extension Round {
 
     public func makeScore(team1Score: Int?, team2Score: Int?, checkInside: Bool) {
+        guard (team1Score == nil && team2Score == nil) ||
+              (team1Score != nil && teams.first?.score != team1Score) ||
+              (team2Score != nil && teams.last?.score != team2Score) else {
+                makeFinalScore(checkInside: checkInside)
+                return
+        }
+
         nextRoundPointsHanging = 0
         if let score = team1Score {
             teams.first?.score = score
@@ -102,6 +109,10 @@ extension Round {
         }
 
         cancelCapot()
+        makeFinalScore(checkInside: checkInside)
+    }
+
+    private func makeFinalScore(checkInside: Bool) {
         if checkInside {
             makeFinalScore()
         }
