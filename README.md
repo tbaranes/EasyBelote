@@ -1,6 +1,6 @@
 # EasyBelote
 
-EasyBelote is an application which is coming soon in the App Store!
+EasyBelote is an application available in the App Store!
 
 ### What is it?
 
