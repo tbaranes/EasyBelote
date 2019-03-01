@@ -106,7 +106,11 @@ extension GameContainerViewController {
 
     @objc
     private func closePressed() {
-        dismiss(animated: true)
+        if gameVC.isHistoryOpened {
+            gameVC.toggleHistoryPressed()
+        } else {
+            dismiss(animated: true)
+        }
     }
 
     @objc
@@ -155,6 +159,7 @@ extension GameContainerViewController {
 
     private func prepare(embedGameVC segue: UIStoryboardSegue) {
         if let gameVC = segue.destination as? GameViewController {
+            self.gameVC = gameVC
             gameVC.inject(game: game, delegate: self)
         }
     }

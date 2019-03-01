@@ -70,7 +70,7 @@ final class GameViewController: UIViewController {
 
 extension GameViewController {
 
-    private var isHistoryOpened: Bool {
+    public var isHistoryOpened: Bool {
         return btnToggleRoundsHistory.transform != .identity
     }
 
@@ -173,7 +173,7 @@ extension GameViewController {
     }
 
     @objc
-    private func toggleHistoryPressed() {
+    func toggleHistoryPressed() {
         let isOpening = !isHistoryOpened
         let duration = 0.7
         UIView.animate(withDuration: isOpening ? duration / 2 : duration) {
