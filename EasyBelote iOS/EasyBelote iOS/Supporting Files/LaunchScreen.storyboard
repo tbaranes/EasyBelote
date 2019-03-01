@@ -14,41 +14,33 @@
         <scene sceneID="c9M-xs-vQi">
             <objects>
                 <viewController id="4gn-1a-s5z" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="aHC-V6-TrY">
+                    <view key="view" contentMode="scaleToFill" id="gGP-Gk-3oR">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="redraw" insetsLayoutMarginsFromSafeArea="NO" image="home_bg" translatesAutoresizingMaskIntoConstraints="NO" id="BxU-lb-20b">
+                            <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="redraw" insetsLayoutMarginsFromSafeArea="NO" image="home_bg" translatesAutoresizingMaskIntoConstraints="NO" id="7qd-Ti-92j">
                                 <rect key="frame" x="0.0" y="100" width="375" height="567"/>
                             </imageView>
-                            <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" image="generic_logo" translatesAutoresizingMaskIntoConstraints="NO" id="Z4E-7N-PpH">
-                                <rect key="frame" x="125.5" y="50" width="124" height="90"/>
-                            </imageView>
-                            <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" image="home_icon" translatesAutoresizingMaskIntoConstraints="NO" id="g3U-43-4x2">
+                            <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" image="home_icon" translatesAutoresizingMaskIntoConstraints="NO" id="yqO-gA-s0r">
                                 <rect key="frame" x="0.0" y="111" width="375" height="445"/>
                             </imageView>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SlB-34-ZCj">
-                                <rect key="frame" x="0.0" y="475" width="375" height="192"/>
-                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                            </view>
+                            <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" image="generic_logo" translatesAutoresizingMaskIntoConstraints="NO" id="l84-yf-uHq">
+                                <rect key="frame" x="130.5" y="276" width="114" height="85"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="BxU-lb-20b" firstAttribute="height" secondItem="aHC-V6-TrY" secondAttribute="height" multiplier="0.85" id="4Kr-RP-Otf"/>
-                            <constraint firstItem="g3U-43-4x2" firstAttribute="centerY" secondItem="aHC-V6-TrY" secondAttribute="centerY" id="4Ne-sZ-ls4"/>
-                            <constraint firstItem="SlB-34-ZCj" firstAttribute="leading" secondItem="RmB-2H-41g" secondAttribute="leading" id="5nW-XW-vKB"/>
-                            <constraint firstItem="RmB-2H-41g" firstAttribute="trailing" secondItem="BxU-lb-20b" secondAttribute="trailing" id="DiK-Wd-WGV"/>
-                            <constraint firstItem="g3U-43-4x2" firstAttribute="centerX" secondItem="aHC-V6-TrY" secondAttribute="centerX" id="R2v-wz-0qr"/>
-                            <constraint firstItem="RmB-2H-41g" firstAttribute="trailing" secondItem="SlB-34-ZCj" secondAttribute="trailing" id="Z0S-OU-mdI"/>
-                            <constraint firstAttribute="bottom" secondItem="BxU-lb-20b" secondAttribute="bottom" id="Z6w-Jf-O1h"/>
-                            <constraint firstItem="RmB-2H-41g" firstAttribute="bottom" secondItem="SlB-34-ZCj" secondAttribute="bottom" id="aF1-E9-A6O"/>
-                            <constraint firstItem="Z4E-7N-PpH" firstAttribute="centerX" secondItem="aHC-V6-TrY" secondAttribute="centerX" id="fIs-gY-Ny9"/>
-                            <constraint firstItem="BxU-lb-20b" firstAttribute="leading" secondItem="aHC-V6-TrY" secondAttribute="leading" id="gwy-xW-eja"/>
-                            <constraint firstItem="SlB-34-ZCj" firstAttribute="top" secondItem="g3U-43-4x2" secondAttribute="bottom" constant="-81" id="iWs-ju-1w6"/>
-                            <constraint firstItem="BxU-lb-20b" firstAttribute="top" secondItem="Z4E-7N-PpH" secondAttribute="bottom" constant="-40" id="irs-8u-cJK"/>
-                            <constraint firstItem="g3U-43-4x2" firstAttribute="top" relation="greaterThanOrEqual" secondItem="RmB-2H-41g" secondAttribute="top" constant="91" id="spR-Y1-Htt"/>
+                            <constraint firstItem="yqO-gA-s0r" firstAttribute="centerX" secondItem="gGP-Gk-3oR" secondAttribute="centerX" id="GqC-KU-0Rj"/>
+                            <constraint firstItem="yqO-gA-s0r" firstAttribute="centerY" secondItem="gGP-Gk-3oR" secondAttribute="centerY" id="I2k-xv-MSS"/>
+                            <constraint firstItem="7qd-Ti-92j" firstAttribute="leading" secondItem="gGP-Gk-3oR" secondAttribute="leading" id="NEt-kO-G8Q"/>
+                            <constraint firstItem="yqO-gA-s0r" firstAttribute="top" relation="greaterThanOrEqual" secondItem="pT7-V7-JSw" secondAttribute="top" constant="91" id="gEv-Q4-k2j"/>
+                            <constraint firstItem="pT7-V7-JSw" firstAttribute="trailing" secondItem="7qd-Ti-92j" secondAttribute="trailing" id="jCT-3q-cz5"/>
+                            <constraint firstItem="l84-yf-uHq" firstAttribute="centerY" secondItem="yqO-gA-s0r" secondAttribute="centerY" constant="-15" id="k1Z-q7-5I9"/>
+                            <constraint firstItem="7qd-Ti-92j" firstAttribute="height" secondItem="gGP-Gk-3oR" secondAttribute="height" multiplier="0.85" id="wzT-0R-8U1"/>
+                            <constraint firstAttribute="bottom" secondItem="7qd-Ti-92j" secondAttribute="bottom" id="x6m-Qm-AZA"/>
+                            <constraint firstItem="l84-yf-uHq" firstAttribute="centerX" secondItem="yqO-gA-s0r" secondAttribute="centerX" id="zJb-Q0-dI2"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="RmB-2H-41g"/>
+                        <viewLayoutGuide key="safeArea" id="pT7-V7-JSw"/>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rbN-kN-C2D" sceneMemberID="firstResponder"/>
@@ -57,7 +49,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="generic_logo" width="124" height="90"/>
+        <image name="generic_logo" width="114" height="85"/>
         <image name="home_bg" width="375" height="538"/>
         <image name="home_icon" width="375" height="445"/>
     </resources>
