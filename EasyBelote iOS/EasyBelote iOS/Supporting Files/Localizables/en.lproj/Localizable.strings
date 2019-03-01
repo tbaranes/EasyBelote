@@ -1,8 +1,8 @@
 "home.new_game" = "New game";
-"new_game.players.you" = "You";
-"new_game.players.your_partner" = "Your Partner";
-"new_game.players.on_left" = "To your left";
-"new_game.players.on_right" = "To your right";
+"new_game.players.you" = "South";
+"new_game.players.your_partner" = "North";
+"new_game.players.on_left" = "West";
+"new_game.players.on_right" = "East";
 "new_game.players.placeholder" = "Enter a name";
 "new_game.nb_points" = "Number of points";
 "new_game.nb_points_placeholder" = "1001";
