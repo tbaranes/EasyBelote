@@ -11,6 +11,8 @@ import SAConfettiView
 import EasyBelote_Core_iOS
 
 protocol GameContainerDelegate: AnyObject {
+    func historyStateDidChange(isOpened: Bool)
+
     func startConfetti()
     func stopConfetti()
 }
@@ -62,14 +64,18 @@ extension GameContainerViewController {
         navigationItem.rightBarButtonItem = rightBarButton
 
         if game.gameState == GameState.playing.rawValue {
-            let leftBarButton = UIBarButtonItem(image: Asset.gameChangeDealer.image,
-                                                style: .plain,
-                                                target: self,
-                                                action: #selector(changeDealerPressed))
-            navigationItem.leftBarButtonItem = leftBarButton
+            makeDealerNavigationBarButton()
         } else {
             navigationItem.leftBarButtonItem = nil
         }
+    }
+
+    private func makeDealerNavigationBarButton() {
+        let leftBarButton = UIBarButtonItem(image: Asset.gameChangeDealer.image,
+                                            style: .plain,
+                                            target: self,
+                                            action: #selector(changeDealerPressed))
+        navigationItem.leftBarButtonItem = leftBarButton
     }
 
 }
@@ -106,7 +112,7 @@ extension GameContainerViewController {
 
     @objc
     private func closePressed() {
-        if gameVC.isHistoryOpened {
+        if gameVC.isHistoryOpened && !viewConfetti.isActive() {
             gameVC.toggleHistoryPressed()
         } else {
             dismiss(animated: true)
@@ -132,6 +138,14 @@ extension GameContainerViewController: GameContainerDelegate {
     func stopConfetti() {
         viewConfetti.isHidden = true
         viewConfetti.stopConfetti()
+    }
+
+    func historyStateDidChange(isOpened: Bool) {
+        if isOpened {
+            navigationItem.leftBarButtonItem = nil
+        } else {
+            makeDealerNavigationBarButton()
+        }
     }
 
 }
