@@ -70,8 +70,9 @@ extension Round {
 
         if Declaration.permanentDeclarations.contains(declaration.rawValue) {
             teamNoDeclaring.declarationsObservable.removeAll { $0 == declaration.rawValue }
-        } else {
-            teamNoDeclaring.declarationsObservable.removeAll { !Declaration.permanentDeclarations.contains($0) }
+        } else if (teamDeclaring.declarations.max(by: { $0.pointsValue < $1.pointsValue })?.pointsValue ?? -1) >
+                  (teamNoDeclaring.declarations.max(by: { $0.pointsValue < $1.pointsValue })?.pointsValue ?? -1) {
+                    teamNoDeclaring.declarationsObservable.removeAll { !Declaration.permanentDeclarations.contains($0) }
         }
     }
 
