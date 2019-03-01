@@ -186,6 +186,7 @@ extension GameViewController {
         UIView.animate(withDuration: duration) {
             self.btnToggleRoundsHistory.transform = isOpening ? CGAffineTransform(rotationAngle: CGFloat.pi) : .identity
             self.viewScores.transform = isOpening ? CGAffineTransform(translationX: 0, y: -self.viewScores.frame.minY) : .identity
+            self.delegate?.historyStateDidChange(isOpened: isOpening)
         }
     }
 
