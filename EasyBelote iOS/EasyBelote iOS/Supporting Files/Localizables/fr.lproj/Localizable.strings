@@ -1,7 +1,7 @@
 "home.new_game" = "Nouvelle partie";
 "new_game.players.you" = "Sud";
 "new_game.players.your_partner" = "Nord";
-"new_game.players.on_left" = "East";
+"new_game.players.on_left" = "Est";
 "new_game.players.on_right" = "Ouest";
 "new_game.players.placeholder" = "Entrez un prénom";
 "new_game.nb_points" = "Nombre de points";
