@@ -12,6 +12,9 @@ public enum Declaration: Int, CaseIterable {
     case belote
     case capot
 
+    case coinche
+    case surcoinche
+
     case tierce
     case quarte
     case quinte
@@ -21,6 +24,16 @@ public enum Declaration: Int, CaseIterable {
 
     static var permanentDeclarations: [Int] {
         return [Declaration.belote.rawValue, Declaration.capot.rawValue]
+    }
+
+    static public var coincheContractDeclarations: [Declaration] {
+        return [Declaration.capot, Declaration.coinche, Declaration.surcoinche]
+    }
+
+    static var teamDeclarations: [Declaration] {
+        var teamDeclarations = Declaration.allCases
+        teamDeclarations.removeAll { $0 == .coinche || $0 == .surcoinche }
+        return teamDeclarations
     }
 
     var pointsValue: Int {
@@ -35,7 +48,16 @@ public enum Declaration: Int, CaseIterable {
             return 150
         case .squareJacks:
             return 200
-        case .capot:
+        case .capot, .coinche, .surcoinche:
+            return 0
+        }
+    }
+
+    var scoreMultiplier: Int {
+        switch self {
+        case .coinche, .surcoinche:
+            return 2
+        default:
             return 0
         }
     }

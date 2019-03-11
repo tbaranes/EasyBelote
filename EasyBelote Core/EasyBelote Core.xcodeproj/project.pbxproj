@@ -17,6 +17,7 @@
 		E2AC2E5021E636D100FB14DA /* Sample_Core.h in Headers */ = {isa = PBXBuildFile; fileRef = E2AC2E4E21E636D100FB14DA /* Sample_Core.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		E2AC2E7121E63DE300FB14DA /* AppConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2AC2E7021E63DE300FB14DA /* AppConfiguration.swift */; };
 		E2AC2EB321E64ABD00FB14DA /* ArrayExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2AC2EB221E64ABD00FB14DA /* ArrayExtension.swift */; };
+		E2F5EA2F2226C61E00AAD2C6 /* RoundContract.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2F5EA2E2226C61E00AAD2C6 /* RoundContract.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +33,7 @@
 		E2AC2E4F21E636D100FB14DA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E2AC2E7021E63DE300FB14DA /* AppConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppConfiguration.swift; sourceTree = "<group>"; };
 		E2AC2EB221E64ABD00FB14DA /* ArrayExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArrayExtension.swift; sourceTree = "<group>"; };
+		E2F5EA2E2226C61E00AAD2C6 /* RoundContract.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundContract.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -52,6 +54,7 @@
 				E2181A8622116B7100EF163A /* Game.swift */,
 				E2181A9E2211E4F100EF163A /* Player.swift */,
 				E2181A972211E28000EF163A /* Round.swift */,
+				E2F5EA2E2226C61E00AAD2C6 /* RoundContract.swift */,
 				E2181A9C2211E3AF00EF163A /* TeamRound.swift */,
 			);
 			path = Model;
@@ -225,6 +228,7 @@
 			files = (
 				E2181A9D2211E3AF00EF163A /* TeamRound.swift in Sources */,
 				E2AC2EB321E64ABD00FB14DA /* ArrayExtension.swift in Sources */,
+				E2F5EA2F2226C61E00AAD2C6 /* RoundContract.swift in Sources */,
 				E23C25C42216C8EA004508F0 /* Belote.swift in Sources */,
 				E2181A8722116B7100EF163A /* Game.swift in Sources */,
 				E2181A9B2211E33500EF163A /* Declaration.swift in Sources */,

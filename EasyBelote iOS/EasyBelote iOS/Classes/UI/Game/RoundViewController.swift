@@ -13,6 +13,8 @@ final class RoundViewController: UIViewController {
 
     // MARK: IBOutlets
 
+    @IBOutlet private var viewCoinche: CoincheView!
+    @IBOutlet private var viewCoincheSeparator: UIView!
     @IBOutlet private var viewTeamsRound: [TeamRoundView]!
     @IBOutlet private weak var btnSaveRound: UIButton!
 
@@ -32,14 +34,21 @@ final class RoundViewController: UIViewController {
         makeActions()
         makeObservers()
         btnSaveRound.setTitle(L10n.Game.Round.save, for: .normal)
+        if !game.isPlayingCoinche {
+            viewCoinche.removeFromSuperview()
+            viewCoincheSeparator.removeFromSuperview()
+        }
 
-        if round.teamsScore.0 == -1 && round.teamsScore.1 == -1 {
+        if round.contract.points == -1 {
+            viewCoinche.textFieldContract.becomeFirstResponder()
+        } else if round.teamsScore.0 == -1 && round.teamsScore.1 == -1 {
             viewTeamsRound.first { $0.isBidder }?.textFieldScore.becomeFirstResponder()
         }
     }
 
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
+        viewCoinche.textFieldContract.resignFirstResponder()
         viewTeamsRound.forEach {
             $0.textFieldScore.resignFirstResponder()
         }
@@ -67,11 +76,21 @@ extension RoundViewController {
     }
 
     private func configureGame() {
+        viewCoinche.configure(declarationsSelected: round.contract.declarations)
         game.teams.enumerated().forEach { idx, players in
             let teamName = players.map { $0.name }.joined(separator: " + ")
             let viewTeamRound = viewTeamsRound.first { $0.tag == idx }
             viewTeamRound?.configure(teamName: teamName, declarations: game.availableDeclarations)
             viewTeamRound?.configure(declarationsSelected: [])
+        }
+    }
+
+    private func configureSaveButton() {
+        let areScoresValid = viewTeamsRound.allSatisfy { $0.score != -1 }
+        if game.isPlayingCoinche {
+            btnSaveRound.isEnabled = areScoresValid && viewCoinche.contractPoints >= 0
+        } else {
+            btnSaveRound.isEnabled = areScoresValid
         }
     }
 
@@ -82,11 +101,28 @@ extension RoundViewController {
 extension RoundViewController {
 
     private func makeObservers() {
+        observeContractPoints()
+        observeContractDeclarations()
         round.teams.forEach {
             self.observeBidderId($0)
             self.observeTeamRoundScore($0)
             self.observeTeamRoundDeclarations($0)
         }
+    }
+
+    private func observeContractPoints() {
+        let token = round.contract.observe(\.points, options: [.initial, .new]) { [unowned self] object, _ in
+            self.viewCoinche.contractPoints = object.points
+            self.configureSaveButton()
+        }
+        tokens.append(token)
+    }
+
+    private func observeContractDeclarations() {
+        let token = round.contract.observe(\.declarationsObservable, options: [.initial, .new]) { [unowned self] object, _ in
+            self.viewCoinche.configure(declarationsSelected: object.declarations)
+        }
+        tokens.append(token)
     }
 
     private func observeBidderId(_ teamRound: TeamRound) {
@@ -99,7 +135,7 @@ extension RoundViewController {
     private func observeTeamRoundScore(_ teamRound: TeamRound) {
         let token = teamRound.observe(\.score, options: [.initial, .new]) { [unowned self] object, _ in
             self.viewTeamsRound.first { $0.tag == object.id }?.score = object.score
-            self.btnSaveRound.isEnabled = object.score != -1
+            self.configureSaveButton()
         }
         tokens.append(token)
     }
@@ -118,6 +154,11 @@ extension RoundViewController {
 extension RoundViewController {
 
     private func makeActions() {
+        viewCoinche.textFieldContract.addTarget(self, action: #selector(textFieldContractEditingChanged(_:)), for: .editingChanged)
+        viewCoinche.declarationButtons.forEach { btn in
+            btn.addTarget(self, action: #selector(contractDeclarationPressed(_:)), for: .touchUpInside)
+        }
+
         viewTeamsRound.forEach {
             let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(bidderPressed(_:)))
             $0.viewTeam.addGestureRecognizer(tapGestureRecognizer)
@@ -133,6 +174,19 @@ extension RoundViewController {
     @objc
     private func closePressed() {
         dismiss(animated: true)
+    }
+
+    // MARK: Contract
+
+    @objc
+    private func textFieldContractEditingChanged(_ textField: UITextField) {
+        let points = Int(textField.text ?? "")
+        round.contract.points = points ?? -1
+    }
+
+    @objc
+    private func contractDeclarationPressed(_ btn: DeclarationButton) {
+        round.contract.toggleDeclaration(btn.declaration)
     }
 
     // MARK: Game

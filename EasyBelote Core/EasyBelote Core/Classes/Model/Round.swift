@@ -14,15 +14,19 @@ final public class Round: NSObject {
     // MARK: Properties
 
     public let teams: [TeamRound]
+    public let isPlayingCoinche: Bool
+    public var contract: RoundContract
 
     var pointsHanging = 0
     private(set) var nextRoundPointsHanging = 0
 
     // MARK: Life cycle
 
-    init(teams: [TeamRound], pointsHanging: Int) {
+    init(teams: [TeamRound], isPlayingCoinche: Bool, pointsHanging: Int) {
         self.teams = teams
+        self.isPlayingCoinche = isPlayingCoinche
         self.pointsHanging = pointsHanging
+        self.contract = RoundContract(isPlayingCoinche: isPlayingCoinche)
     }
 
     public func changeBidderId(_ bidderId: Int) {
@@ -124,7 +128,7 @@ extension Round {
         }
 
         let teamNoBidder = teams.first { !$0.isBidder }
-        guard let teamBidder = teams.first(where: { $0.isBidder }), teamBidder.score < Belote.biddingSuccess else {
+        guard let teamBidder = teams.first(where: { $0.isBidder }), teamBidder.score < contract.points else {
             return
         }
 
@@ -154,18 +158,25 @@ extension Round {
             return (0, 0)
         }
 
-        let teamWinningHangingPoints = findTeamWinningHangingPoints(team1: team1, team2: team2)
-        var team1Score = team1.score + (team1 == teamWinningHangingPoints ? pointsHanging : 0)
-        var team2Score = team2.score + (team2 == teamWinningHangingPoints ? pointsHanging : 0)
+        let teamWinning = findTeamWinning(team1: team1, team2: team2)
+        var team1Score = team1.score + (team1 == teamWinning ? pointsHanging : 0)
+        var team2Score = team2.score + (team2 == teamWinning ? pointsHanging : 0)
         team1Score += team1.declarations.reduce(0) { $0 + $1.pointsValue }
         team2Score += team2.declarations.reduce(0) { $0 + $1.pointsValue }
+        if isPlayingCoinche {
+            team1Score += teamWinning == team1 ? contract.points : 0
+            team2Score += teamWinning == team2 ? contract.points : 0
+        }
+
+        team1Score *= teamWinning == team1 ? contract.scoreMultiplier : 1
+        team2Score *= teamWinning == team2 ? contract.scoreMultiplier : 1
         return (team1Score, team2Score)
     }
 
-    private func findTeamWinningHangingPoints(team1: TeamRound, team2: TeamRound) -> TeamRound {
+    private func findTeamWinning(team1: TeamRound, team2: TeamRound) -> TeamRound {
         let teamResult: [(team: TeamRound, score: Int, isBidder: Bool)] = [(team1, team1.score, team1.isBidder),
                                                                            (team2, team2.score, team2.isBidder)]
-        var teamWinningHangingPoints = teamResult.first { $0.isBidder && $0.score > 81 }?.team
+        var teamWinningHangingPoints = teamResult.first { $0.isBidder && $0.score >= contract.points }?.team
         if teamWinningHangingPoints == nil {
             teamWinningHangingPoints = teamResult.first { !$0.isBidder }?.team
         }

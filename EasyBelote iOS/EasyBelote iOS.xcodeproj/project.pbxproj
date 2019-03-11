@@ -36,6 +36,8 @@
 		E2AD87502215744D004CB98D /* GameContainerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2AD874F2215744D004CB98D /* GameContainerViewController.swift */; };
 		E2D49EFD2211658C00FE8802 /* EasyBelote_Core_iOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E2D49EFC2211658C00FE8802 /* EasyBelote_Core_iOS.framework */; };
 		E2D49EFE2211658C00FE8802 /* EasyBelote_Core_iOS.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = E2D49EFC2211658C00FE8802 /* EasyBelote_Core_iOS.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		E2F5EA312226CD7300AAD2C6 /* CoincheView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2F5EA302226CD7300AAD2C6 /* CoincheView.swift */; };
+		E2F5EA332226CD7B00AAD2C6 /* CoincheView.xib in Resources */ = {isa = PBXBuildFile; fileRef = E2F5EA322226CD7B00AAD2C6 /* CoincheView.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -86,6 +88,8 @@
 		E2AC2E1621E62EFC00FB14DA /* EasyBelote iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "EasyBelote iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E2AD874F2215744D004CB98D /* GameContainerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameContainerViewController.swift; sourceTree = "<group>"; };
 		E2D49EFC2211658C00FE8802 /* EasyBelote_Core_iOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = EasyBelote_Core_iOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E2F5EA302226CD7300AAD2C6 /* CoincheView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoincheView.swift; sourceTree = "<group>"; };
+		E2F5EA322226CD7B00AAD2C6 /* CoincheView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CoincheView.xib; sourceTree = "<group>"; };
 		F488AC120B9A6CEE320295D7 /* Pods-Sample iOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Sample iOS.debug.xcconfig"; path = "../Pods/Target Support Files/Pods-Sample iOS/Pods-Sample iOS.debug.xcconfig"; sourceTree = "<group>"; };
 		F4C2D34300D45284333FCC27 /* Pods_EasyBelote_iOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_EasyBelote_iOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -214,6 +218,8 @@
 				E23C25BB2216B394004508F0 /* PlayerView.xib */,
 				E23C25BF2216BBA6004508F0 /* TeamRoundView.swift */,
 				E23C25C12216BBAD004508F0 /* TeamRoundView.xib */,
+				E2F5EA302226CD7300AAD2C6 /* CoincheView.swift */,
+				E2F5EA322226CD7B00AAD2C6 /* CoincheView.xib */,
 				E20C8E422217021C00079164 /* DeclarationButton.swift */,
 				E20C8E442217022300079164 /* DeclarationButton.xib */,
 			);
@@ -328,6 +334,7 @@
 			files = (
 				E20C8E452217022300079164 /* DeclarationButton.xib in Resources */,
 				E2181A72221166E800EF163A /* Main.storyboard in Resources */,
+				E2F5EA332226CD7B00AAD2C6 /* CoincheView.xib in Resources */,
 				E2181A7A221166E800EF163A /* Localizable.strings in Resources */,
 				E2181A79221166E800EF163A /* Assets.xcassets in Resources */,
 				E2181A7F2211691F00EF163A /* Game.storyboard in Resources */,
@@ -454,6 +461,7 @@
 				E29E823A221414EC0036EC86 /* HighlightableView.swift in Sources */,
 				E23C25BE2216B7C9004508F0 /* RoundViewController.swift in Sources */,
 				E2181A71221166E800EF163A /* HomeViewController.swift in Sources */,
+				E2F5EA312226CD7300AAD2C6 /* CoincheView.swift in Sources */,
 				E2181A76221166E800EF163A /* StoryboardScenes.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -16,6 +16,8 @@ internal enum L10n {
     /// Who's bidding?
     internal static let bidding = L10n.tr("Localizable", "game.bidding")
     internal enum Round {
+      /// Contract
+      internal static let enterContract = L10n.tr("Localizable", "game.round.enter_contract")
       /// Score
       internal static let enterScore = L10n.tr("Localizable", "game.round.enter_score")
       /// Save
@@ -25,6 +27,8 @@ internal enum L10n {
         internal static let belote = L10n.tr("Localizable", "game.round.declaration.belote")
         /// Capot
         internal static let capot = L10n.tr("Localizable", "game.round.declaration.capot")
+        /// Coinche
+        internal static let coinche = L10n.tr("Localizable", "game.round.declaration.coinche")
         /// Quarte
         internal static let quarte = L10n.tr("Localizable", "game.round.declaration.quarte")
         /// Quinte
@@ -35,6 +39,8 @@ internal enum L10n {
         internal static let squareJacks = L10n.tr("Localizable", "game.round.declaration.squareJacks")
         /// 4 of nines
         internal static let squareNines = L10n.tr("Localizable", "game.round.declaration.squareNines")
+        /// Surcoinche
+        internal static let surcoinche = L10n.tr("Localizable", "game.round.declaration.surcoinche")
         /// Tierce
         internal static let tierce = L10n.tr("Localizable", "game.round.declaration.tierce")
       }
@@ -47,6 +53,8 @@ internal enum L10n {
   }
 
   internal enum NewGame {
+    /// Coinche
+    internal static let coinche = L10n.tr("Localizable", "new_game.coinche")
     /// Declarations
     internal static let declarations = L10n.tr("Localizable", "new_game.declarations")
     /// Number of points

@@ -7,10 +7,12 @@
 "new_game.nb_points" = "Nombre de points";
 "new_game.nb_points_placeholder" = "1001";
 "new_game.declarations" = "Annonces";
+"new_game.coinche" = "Coinche";
 "new_game.start_game" = "Démarrer";
 "game.bidding" = "Qui prend ?";
 "game.round.save" = "Enregistrer";
 "game.round.enter_score" = "Score";
+"game.round.enter_contract" = "Contrat";
 "game.round.declaration.belote" = "Belote & re";
 "game.round.declaration.capot" = "Capot";
 "game.round.declaration.tierce" = "Tierce";
