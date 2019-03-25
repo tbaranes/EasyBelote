@@ -21,3 +21,5 @@
 "game.round.declaration.square" = "Carré";
 "game.round.declaration.squareNines" = "Carré de neuf";
 "game.round.declaration.squareJacks" = "Carré de valets";
+"game.round.declaration.coinche" = "Coinche";
+"game.round.declaration.surcoinche" = "Surcoinche";
