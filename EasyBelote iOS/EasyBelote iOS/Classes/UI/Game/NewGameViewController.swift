@@ -63,15 +63,16 @@ extension NewGameViewController {
         labelPlayers.forEach {
             switch $0.tag {
             case 0: $0.text = L10n.NewGame.Players.you.uppercased()
-            case 1: $0.text = L10n.NewGame.Players.onLeft.uppercased()
+            case 3: $0.text = L10n.NewGame.Players.onLeft.uppercased()
             case 2: $0.text = L10n.NewGame.Players.yourPartner.uppercased()
-            case 3: $0.text = L10n.NewGame.Players.onRight.uppercased()
+            case 1: $0.text = L10n.NewGame.Players.onRight.uppercased()
             default: break
             }
         }
 
         textFieldPlayers.forEach {
             $0.placeholder = L10n.NewGame.Players.placeholder
+            $0.delegate = self
         }
 
         labelNbPoints.text = L10n.NewGame.nbPoints.uppercased()
@@ -122,17 +123,7 @@ extension NewGameViewController {
 
     @objc
     private func playerNameEditingChanged(_ textField: UITextField) {
-        switch textField.tag {
-        case 0, 2:
-            game.allPlayers[textField.tag].name = textField.text?.uppercased() ?? ""
-        case 1:
-            game.allPlayers[3].name = textField.text?.uppercased() ?? ""
-        case 3:
-            game.allPlayers[1].name = textField.text?.uppercased() ?? ""
-        default:
-            break
-        }
-
+        game.allPlayers[textField.tag].name = textField.text?.uppercased() ?? ""
         btnStartGame.isEnabled = game.canStartGame
     }
 
@@ -164,7 +155,7 @@ extension NewGameViewController: UITextFieldDelegate {
 
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         let nextTextField: UITextField?
-        if textField.returnKeyType != .done && btnStartGame.isEnabled {
+        if btnStartGame.isEnabled {
             nextTextField = nil
         } else {
             nextTextField = textFieldPlayers.first { $0.tag == textField.tag + 1 }
