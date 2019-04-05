@@ -22,6 +22,9 @@ internal struct ColorName {
   /// <span style="display:block;width:3em;height:2em;border:1px solid black;background:#4a4a4a"></span>
   /// Alpha: 100% <br/> (0x4a4a4aff)
   internal static let easyBeloteGray = ColorName(rgbaValue: 0x4a4a4aff)
+  /// <span style="display:block;width:3em;height:2em;border:1px solid black;background:#fb9d3b"></span>
+  /// Alpha: 100% <br/> (0xfb9d3bff)
+  internal static let easyBeloteOrange = ColorName(rgbaValue: 0xfb9d3bff)
   /// <span style="display:block;width:3em;height:2em;border:1px solid black;background:#ff555d"></span>
   /// Alpha: 100% <br/> (0xff555dff)
   internal static let easyBeloteRed = ColorName(rgbaValue: 0xff555dff)

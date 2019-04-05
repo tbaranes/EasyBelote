@@ -137,7 +137,7 @@ extension GameViewController {
 
         if team1Score != team2Score {
             (team1Score > team2Score ? [labelTeam1, labelScoreTeam1] : [labelTeam2, labelScoreTeam2]).forEach {
-                $0?.textColor = ColorName.easyBeloteRed.color
+                $0?.textColor = ColorName.easyBeloteOrange.color
             }
         }
     }
