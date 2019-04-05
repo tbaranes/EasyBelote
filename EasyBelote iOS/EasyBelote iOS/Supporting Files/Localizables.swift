@@ -64,15 +64,15 @@ internal enum L10n {
     /// Start game
     internal static let startGame = L10n.tr("Localizable", "new_game.start_game")
     internal enum Players {
-      /// To your left
+      /// West
       internal static let onLeft = L10n.tr("Localizable", "new_game.players.on_left")
-      /// To your right
+      /// East
       internal static let onRight = L10n.tr("Localizable", "new_game.players.on_right")
       /// Enter a name
       internal static let placeholder = L10n.tr("Localizable", "new_game.players.placeholder")
-      /// You
+      /// South
       internal static let you = L10n.tr("Localizable", "new_game.players.you")
-      /// Your Partner
+      /// North
       internal static let yourPartner = L10n.tr("Localizable", "new_game.players.your_partner")
     }
   }
