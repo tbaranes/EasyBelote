@@ -306,6 +306,7 @@
 				TargetAttributes = {
 					E2AC2E1521E62EFC00FB14DA = {
 						CreatedOnToolsVersion = 10.1;
+						LastSwiftMigration = 1020;
 					};
 				};
 			};
@@ -316,6 +317,7 @@
 			knownRegions = (
 				en,
 				fr,
+				Base,
 			);
 			mainGroup = E2AC2E0D21E62EFC00FB14DA;
 			productRefGroup = E2AC2E1721E62EFC00FB14DA /* Products */;
@@ -618,7 +620,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.tombaranes.easybelote;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
@@ -642,7 +644,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.tombaranes.easybelote;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;

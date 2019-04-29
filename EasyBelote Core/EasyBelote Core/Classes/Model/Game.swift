@@ -94,7 +94,7 @@ extension Game {
     }
 
     public func updateRound(_ round: Round) {
-        guard let roundIdx = rounds.index(where: { $0 == round })  else {
+        guard let roundIdx = rounds.firstIndex(where: { $0 == round })  else {
             return
         }
 
