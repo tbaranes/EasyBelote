@@ -78,14 +78,16 @@ extension TeamRoundView: UITextFieldDelegate {
         return true
     }
 
-    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+    func textField(_ textField: UITextField,
+                   shouldChangeCharactersIn range: NSRange,
+                   replacementString string: String) -> Bool {
         guard let range = Range(range, in: textField.text ?? ""),
             let scoreString = textField.text?.replacingCharacters(in: range, with: string) else {
             return false
         }
 
         let score = Int(scoreString)
-        return scoreString.isEmpty || (score != nil && score! <= Belote.roundPoints)
+        return scoreString.isEmpty || (score != nil && score! <= Belote.roundPoints.value)
     }
 
 }
@@ -113,8 +115,10 @@ extension TeamRoundView {
     }
 
     private func addDeclarationButton(_ button: UIButton) {
-        var stackView: UIStackView = (stackViewDeclarations.arrangedSubviews.last as? UIStackView) ?? makeNextStackViewType()
-        let currentWidth = stackView.arrangedSubviews.reduce(0) { $0 + (($1 as? UIButton)?.frame.size.width ?? 0) + stackView.spacing }
+        var stackView = (stackViewDeclarations.arrangedSubviews.last as? UIStackView) ?? makeNextStackViewType()
+        let currentWidth = stackView.arrangedSubviews.reduce(0) {
+            $0 + (($1 as? UIButton)?.frame.size.width ?? 0) + stackView.spacing
+        }
         let newWidth = stackView.spacing + stackView.spacing + button.frame.size.width
         if currentWidth + newWidth > stackViewDeclarations.frame.size.width {
             stackView = makeNextStackViewType()

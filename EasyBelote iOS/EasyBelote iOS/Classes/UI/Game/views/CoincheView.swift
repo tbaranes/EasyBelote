@@ -73,7 +73,9 @@ extension CoincheView: UITextFieldDelegate {
         return true
     }
 
-    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+    func textField(_ textField: UITextField,
+                   shouldChangeCharactersIn range: NSRange,
+                   replacementString string: String) -> Bool {
         guard let range = Range(range, in: textField.text ?? ""),
             let scoreString = textField.text?.replacingCharacters(in: range, with: string) else {
                 return false

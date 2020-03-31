@@ -39,8 +39,12 @@ extension RoundTableViewCell {
         let teamsScore = round.teamsScore
         labelTeam1.text = String(describing: teamsScore.0)
         labelTeam2.text = String(describing: teamsScore.1)
-        labelTeam1.textColor = teamsScore.0 > teamsScore.1 ? ColorName.easyBeloteOrange.color : ColorName.easyBeloteGray.color
-        labelTeam2.textColor = teamsScore.1 > teamsScore.0 ? ColorName.easyBeloteOrange.color : ColorName.easyBeloteGray.color
+        labelTeam1.textColor = teamsScore.0 > teamsScore.1 ?
+            ColorName.easyBeloteOrange.color :
+            ColorName.easyBeloteGray.color
+        labelTeam2.textColor = teamsScore.1 > teamsScore.0 ?
+            ColorName.easyBeloteOrange.color :
+            ColorName.easyBeloteGray.color
     }
 
 }

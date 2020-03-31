@@ -30,15 +30,14 @@ public final class Game: NSObject {
     // MARK: Life Cycle
 
     public override init() {
-        let userDefaults = UserDefaults.standard
-        if let players = userDefaults[.players] {
+        if let players = Defaults.players {
             teams = [players.filter { $0.id == 0 || $0.id == 2 }, players.filter { $0.id == 1 || $0.id == 3 }]
         } else {
             teams = [[Player(id: 0), Player(id: 2)], [Player(id: 1), Player(id: 3)]]
         }
-        nbPoints = userDefaults[.nbPoints] > 0 ? userDefaults[.nbPoints] : 1001
-        isDeclarationsEnabled = userDefaults[.isDeclarationsEnabled]
-        isPlayingCoinche = userDefaults[.isPlayingCoinche]
+        nbPoints = Defaults.nbPoints
+        isDeclarationsEnabled = Defaults.isDeclarationsEnabled
+        isPlayingCoinche = Defaults.isPlayingCoinche
 
         rounds = []
         currentDealerId = 0
@@ -46,11 +45,10 @@ public final class Game: NSObject {
     }
 
     public func startGame() {
-        let userDefaults = UserDefaults.standard
-        userDefaults[.players] = allPlayers
-        userDefaults[.nbPoints] = nbPoints
-        userDefaults[.isDeclarationsEnabled] = isDeclarationsEnabled
-        userDefaults[.isPlayingCoinche] = isPlayingCoinche
+        Defaults[\.players] = allPlayers
+        Defaults[\.nbPoints] = nbPoints
+        Defaults[\.isDeclarationsEnabled] = isDeclarationsEnabled
+        Defaults[\.isPlayingCoinche] = isPlayingCoinche
 
         gameState = GameState.playing.rawValue
     }
@@ -111,13 +109,4 @@ extension Game {
         moveToNextDealer()
     }
 
-}
-
-// MARK: - DefaultsKeys
-
-public extension DefaultsKeys {
-    static let players = DefaultsKey<[Player]?>("teams")
-    static let nbPoints = DefaultsKey<Int>("nb_points")
-    static let isDeclarationsEnabled = DefaultsKey<Bool>("is_declarations_enabled")
-    static let isPlayingCoinche = DefaultsKey<Bool>("is_coinche")
 }

@@ -61,7 +61,7 @@ extension Round {
 
     private func toggleCapot(teamDeclaring: TeamRound, teamNoDeclaring: TeamRound) {
         let teamDeclaringHasCapot = teamDeclaring.declarations.contains(.capot)
-        teamDeclaring.score = teamDeclaringHasCapot ? Belote.capotPoints : -1
+        teamDeclaring.score = teamDeclaringHasCapot ? Belote.capotPoints.value : -1
         teamNoDeclaring.score = teamDeclaringHasCapot ? 0 : -1
     }
 
@@ -80,7 +80,7 @@ extension Round {
         }
     }
 
-    func cancelCapot() {
+    private func cancelCapot() {
         teams.forEach {
             $0.declarationsObservable.removeAll { $0 == Declaration.capot.rawValue }
         }
@@ -103,10 +103,10 @@ extension Round {
         nextRoundPointsHanging = 0
         if let score = team1Score {
             teams.first?.score = score
-            teams.last?.score = Belote.roundPoints - score
+            teams.last?.score = Belote.roundPoints.value - score
         } else if let score = team2Score {
             teams.last?.score = score
-            teams.first?.score = Belote.roundPoints - score
+            teams.first?.score = Belote.roundPoints.value - score
         } else {
             teams.first?.score = -1
             teams.last?.score = -1
@@ -137,8 +137,8 @@ extension Round {
             teamBidder.score = 0
         } else {
             teamBidder.score = 0
-            if teamNoBidder?.score != Belote.capotPoints {
-                teamNoBidder?.score = Belote.roundPoints
+            if teamNoBidder?.score != Belote.capotPoints.value {
+                teamNoBidder?.score = Belote.roundPoints.value
             }
         }
     }

@@ -3,11 +3,11 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
-		BFFF438E41A062B2D8A63569 /* Pods_EasyBelote_iOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F4C2D34300D45284333FCC27 /* Pods_EasyBelote_iOS.framework */; };
+		001076F6423B6822115F0311 /* Pods_EasyBelote_iOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C13CB9341D9114E0C4626243 /* Pods_EasyBelote_iOS.framework */; };
 		E20C8E432217021C00079164 /* DeclarationButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = E20C8E422217021C00079164 /* DeclarationButton.swift */; };
 		E20C8E452217022300079164 /* DeclarationButton.xib in Resources */ = {isa = PBXBuildFile; fileRef = E20C8E442217022300079164 /* DeclarationButton.xib */; };
 		E20C8E47221718E500079164 /* RoundHistoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E20C8E46221718E500079164 /* RoundHistoryViewController.swift */; };
@@ -32,6 +32,8 @@
 		E23C25BE2216B7C9004508F0 /* RoundViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E23C25BD2216B7C9004508F0 /* RoundViewController.swift */; };
 		E23C25C02216BBA6004508F0 /* TeamRoundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E23C25BF2216BBA6004508F0 /* TeamRoundView.swift */; };
 		E23C25C22216BBAD004508F0 /* TeamRoundView.xib in Resources */ = {isa = PBXBuildFile; fileRef = E23C25C12216BBAD004508F0 /* TeamRoundView.xib */; };
+		E265882A243333AE00AB79C7 /* IQKeyboardManagerSwift in Frameworks */ = {isa = PBXBuildFile; productRef = E2658829243333AE00AB79C7 /* IQKeyboardManagerSwift */; };
+		E2658830243335D400AB79C7 /* Reusable in Frameworks */ = {isa = PBXBuildFile; productRef = E265882F243335D400AB79C7 /* Reusable */; };
 		E29E823A221414EC0036EC86 /* HighlightableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E29E8239221414EC0036EC86 /* HighlightableView.swift */; };
 		E2AD87502215744D004CB98D /* GameContainerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2AD874F2215744D004CB98D /* GameContainerViewController.swift */; };
 		E2D49EFD2211658C00FE8802 /* EasyBelote_Core_iOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E2D49EFC2211658C00FE8802 /* EasyBelote_Core_iOS.framework */; };
@@ -55,9 +57,9 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		34BF0E06A2BBBAC806A14B6D /* Pods-Sample iOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Sample iOS.release.xcconfig"; path = "../Pods/Target Support Files/Pods-Sample iOS/Pods-Sample iOS.release.xcconfig"; sourceTree = "<group>"; };
-		6B2B181710995867948F9B85 /* Pods-EasyBelote iOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EasyBelote iOS.release.xcconfig"; path = "../Pods/Target Support Files/Pods-EasyBelote iOS/Pods-EasyBelote iOS.release.xcconfig"; sourceTree = "<group>"; };
-		85D40065B4465F18C0849D77 /* Pods-EasyBelote iOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EasyBelote iOS.debug.xcconfig"; path = "../Pods/Target Support Files/Pods-EasyBelote iOS/Pods-EasyBelote iOS.debug.xcconfig"; sourceTree = "<group>"; };
+		A576CE166430400ABCDA4E09 /* Pods-EasyBelote iOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EasyBelote iOS.release.xcconfig"; path = "Target Support Files/Pods-EasyBelote iOS/Pods-EasyBelote iOS.release.xcconfig"; sourceTree = "<group>"; };
+		A67DD20654AF0DE37B753BDF /* Pods-EasyBelote iOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EasyBelote iOS.debug.xcconfig"; path = "Target Support Files/Pods-EasyBelote iOS/Pods-EasyBelote iOS.debug.xcconfig"; sourceTree = "<group>"; };
+		C13CB9341D9114E0C4626243 /* Pods_EasyBelote_iOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_EasyBelote_iOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E20C8E422217021C00079164 /* DeclarationButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeclarationButton.swift; sourceTree = "<group>"; };
 		E20C8E442217022300079164 /* DeclarationButton.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DeclarationButton.xib; sourceTree = "<group>"; };
 		E20C8E46221718E500079164 /* RoundHistoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundHistoryViewController.swift; sourceTree = "<group>"; };
@@ -90,8 +92,6 @@
 		E2D49EFC2211658C00FE8802 /* EasyBelote_Core_iOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = EasyBelote_Core_iOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E2F5EA302226CD7300AAD2C6 /* CoincheView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoincheView.swift; sourceTree = "<group>"; };
 		E2F5EA322226CD7B00AAD2C6 /* CoincheView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CoincheView.xib; sourceTree = "<group>"; };
-		F488AC120B9A6CEE320295D7 /* Pods-Sample iOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Sample iOS.debug.xcconfig"; path = "../Pods/Target Support Files/Pods-Sample iOS/Pods-Sample iOS.debug.xcconfig"; sourceTree = "<group>"; };
-		F4C2D34300D45284333FCC27 /* Pods_EasyBelote_iOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_EasyBelote_iOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -100,22 +100,31 @@
 			buildActionMask = 2147483647;
 			files = (
 				E2D49EFD2211658C00FE8802 /* EasyBelote_Core_iOS.framework in Frameworks */,
-				BFFF438E41A062B2D8A63569 /* Pods_EasyBelote_iOS.framework in Frameworks */,
+				E265882A243333AE00AB79C7 /* IQKeyboardManagerSwift in Frameworks */,
+				E2658830243335D400AB79C7 /* Reusable in Frameworks */,
+				001076F6423B6822115F0311 /* Pods_EasyBelote_iOS.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		3AA432CBEC882767ED3CE144 /* Pods */ = {
+		D55E5D80C5A073D6F60792EB /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				F488AC120B9A6CEE320295D7 /* Pods-Sample iOS.debug.xcconfig */,
-				34BF0E06A2BBBAC806A14B6D /* Pods-Sample iOS.release.xcconfig */,
-				85D40065B4465F18C0849D77 /* Pods-EasyBelote iOS.debug.xcconfig */,
-				6B2B181710995867948F9B85 /* Pods-EasyBelote iOS.release.xcconfig */,
+				C13CB9341D9114E0C4626243 /* Pods_EasyBelote_iOS.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		DB4E33C6150DC3F5EC009F9D /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				A67DD20654AF0DE37B753BDF /* Pods-EasyBelote iOS.debug.xcconfig */,
+				A576CE166430400ABCDA4E09 /* Pods-EasyBelote iOS.release.xcconfig */,
 			);
 			name = Pods;
+			path = ../Pods;
 			sourceTree = "<group>";
 		};
 		E20C8E48221719F700079164 /* cells */ = {
@@ -248,8 +257,8 @@
 				E2D49EFC2211658C00FE8802 /* EasyBelote_Core_iOS.framework */,
 				E2181A5A221166E800EF163A /* EasyBelote iOS */,
 				E2AC2E1721E62EFC00FB14DA /* Products */,
-				E2AC2E3821E6340800FB14DA /* Frameworks */,
-				3AA432CBEC882767ED3CE144 /* Pods */,
+				DB4E33C6150DC3F5EC009F9D /* Pods */,
+				D55E5D80C5A073D6F60792EB /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -261,14 +270,6 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		E2AC2E3821E6340800FB14DA /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				F4C2D34300D45284333FCC27 /* Pods_EasyBelote_iOS.framework */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -276,20 +277,23 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = E2AC2E2821E62EFD00FB14DA /* Build configuration list for PBXNativeTarget "EasyBelote iOS" */;
 			buildPhases = (
-				1A59DA427133A72D3DB580D7 /* [CP] Check Pods Manifest.lock */,
+				746E071EA5305A40CA0F5116 /* [CP] Check Pods Manifest.lock */,
 				E2AC2E1221E62EFC00FB14DA /* Sources */,
 				E2AC2E1321E62EFC00FB14DA /* Frameworks */,
 				E2AC2E1421E62EFC00FB14DA /* Resources */,
 				E2AC2E3321E630C400FB14DA /* Run Script -  🤖 SwiftLint */,
-				E2AC2E3421E630D900FB14DA /* Run Script - 🤕 Copy frameworks */,
-				FBD4B757247BD27A0014F4E4 /* [CP] Embed Pods Frameworks */,
 				E2D49EFF2211658C00FE8802 /* Embed Frameworks */,
+				6F241B3BB5AE4F0A2077CA70 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
 			name = "EasyBelote iOS";
+			packageProductDependencies = (
+				E2658829243333AE00AB79C7 /* IQKeyboardManagerSwift */,
+				E265882F243335D400AB79C7 /* Reusable */,
+			);
 			productName = Barboteur;
 			productReference = E2AC2E1621E62EFC00FB14DA /* EasyBelote iOS.app */;
 			productType = "com.apple.product-type.application";
@@ -320,6 +324,10 @@
 				Base,
 			);
 			mainGroup = E2AC2E0D21E62EFC00FB14DA;
+			packageReferences = (
+				E2658828243333AE00AB79C7 /* XCRemoteSwiftPackageReference "IQKeyboardManager" */,
+				E265882E243335D400AB79C7 /* XCRemoteSwiftPackageReference "Reusable" */,
+			);
 			productRefGroup = E2AC2E1721E62EFC00FB14DA /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -350,7 +358,24 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		1A59DA427133A72D3DB580D7 /* [CP] Check Pods Manifest.lock */ = {
+		6F241B3BB5AE4F0A2077CA70 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-EasyBelote iOS/Pods-EasyBelote iOS-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-EasyBelote iOS/Pods-EasyBelote iOS-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-EasyBelote iOS/Pods-EasyBelote iOS-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		746E071EA5305A40CA0F5116 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -389,56 +414,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "swiftlint --config ../.swiftlint.yml\n";
-		};
-		E2AC2E3421E630D900FB14DA /* Run Script - 🤕 Copy frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"$(SRCROOT)/../Carthage/Build/iOS/Reusable.framework",
-				"$(SRCROOT)/../Carthage/Build/iOS/SwiftyUserDefaults.framework",
-				"$(SRCROOT)/../Carthage/Build/iOS/IQKeyboardManagerSwift.framework",
-			);
-			name = "Run Script - 🤕 Copy frameworks";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/Reusable.framework",
-				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/SwiftyUserDefaults.framework",
-				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/IQKeyboardManagerSwift.framework",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "/usr/local/bin/carthage copy-frameworks\n";
-		};
-		FBD4B757247BD27A0014F4E4 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${SRCROOT}/../Pods/Target Support Files/Pods-EasyBelote iOS/Pods-EasyBelote iOS-frameworks.sh",
-				"${BUILT_PRODUCTS_DIR}/IBAnimatable/IBAnimatable.framework",
-				"${PODS_ROOT}/Reveal-SDK/RevealServer-20/iOS/RevealServer.framework",
-				"${BUILT_PRODUCTS_DIR}/SAConfettiView/SAConfettiView.framework",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/IBAnimatable.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RevealServer.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SAConfettiView.framework",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/../Pods/Target Support Files/Pods-EasyBelote iOS/Pods-EasyBelote iOS-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -603,15 +578,12 @@
 		};
 		E2AC2E2921E62EFD00FB14DA /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 85D40065B4465F18C0849D77 /* Pods-EasyBelote iOS.debug.xcconfig */;
+			baseConfigurationReference = A67DD20654AF0DE37B753BDF /* Pods-EasyBelote iOS.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 6GS59T2X57;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SRCROOT)/../Carthage/Build/iOS",
-					"$(inherited)",
-				);
+				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				INFOPLIST_FILE = "$(SRCROOT)/EasyBelote iOS/Supporting Files/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -627,15 +599,12 @@
 		};
 		E2AC2E2A21E62EFD00FB14DA /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 6B2B181710995867948F9B85 /* Pods-EasyBelote iOS.release.xcconfig */;
+			baseConfigurationReference = A576CE166430400ABCDA4E09 /* Pods-EasyBelote iOS.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 6GS59T2X57;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SRCROOT)/../Carthage/Build/iOS",
-					"$(inherited)",
-				);
+				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				INFOPLIST_FILE = "$(SRCROOT)/EasyBelote iOS/Supporting Files/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -671,6 +640,38 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		E2658828243333AE00AB79C7 /* XCRemoteSwiftPackageReference "IQKeyboardManager" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/hackiftekhar/IQKeyboardManager";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 6.5.5;
+			};
+		};
+		E265882E243335D400AB79C7 /* XCRemoteSwiftPackageReference "Reusable" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/AliSoftware/Reusable";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		E2658829243333AE00AB79C7 /* IQKeyboardManagerSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = E2658828243333AE00AB79C7 /* XCRemoteSwiftPackageReference "IQKeyboardManager" */;
+			productName = IQKeyboardManagerSwift;
+		};
+		E265882F243335D400AB79C7 /* Reusable */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = E265882E243335D400AB79C7 /* XCRemoteSwiftPackageReference "Reusable" */;
+			productName = Reusable;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = E2AC2E0E21E62EFC00FB14DA /* Project object */;
 }

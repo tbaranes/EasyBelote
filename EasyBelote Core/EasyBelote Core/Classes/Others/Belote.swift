@@ -8,13 +8,32 @@
 
 import Foundation
 
-public struct Belote {
-    public static var roundPoints = 162
-    static var biddingSuccess = 82
-    static var belotePoints = 20
-    static var capotPoints = 252
+public enum Belote {
+    case roundPoints
+    case biddingSuccess
+    case belotePoints
+    case capotPoints
 
-    static var smallestCoincheContract = 80
-    static var coincheMultiplier = 2
-    static var surcoincheMultiplier = 2
+    case smallestCoincheContract
+    case coincheMultiplier
+    case surcoincheMultiplier
+
+    public var value: Int {
+        switch self {
+        case .roundPoints:
+            return 162
+        case .biddingSuccess:
+            return 82
+        case .belotePoints:
+            return 20
+        case .capotPoints:
+            return 252
+        case .smallestCoincheContract:
+            return 80
+        case .coincheMultiplier:
+            return 2
+        case .surcoincheMultiplier:
+            return 2
+        }
+    }
 }

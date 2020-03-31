@@ -11,15 +11,17 @@ import EasyBelote_Core_iOS
 import IQKeyboardManagerSwift
 
 @UIApplicationMain
-class AppDelegate: UIResponder, UIApplicationDelegate, AppConfiguration {
-
-    var window: UIWindow?
+class AppDelegate: UIResponder, UIApplicationDelegate {
 
     // MARK: Properties
 
-    // MARK: - Life Cycle
+    var window: UIWindow?
 
-    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
+    // MARK: Life Cycle
+
+    func application(_ application: UIApplication,
+                     // swiftlint:disable:next discouraged_optional_collection
+                     didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         configureAppSpecs()
         return true
     }
@@ -31,7 +33,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate, AppConfiguration {
 extension AppDelegate {
 
     func configureAppSpecs() {
-        configureApp()
         configureNavigationBar()
 
         IQKeyboardManager.shared.enable = true

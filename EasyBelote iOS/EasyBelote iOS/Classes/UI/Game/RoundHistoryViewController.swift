@@ -73,7 +73,7 @@ extension RoundHistoryViewController {
 extension RoundHistoryViewController: UITableViewDataSource {
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return game.rounds.count
+        game.rounds.count
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -93,8 +93,10 @@ extension RoundHistoryViewController: UITableViewDelegate {
         tableView.deselectRow(at: indexPath, animated: true)
 
         DispatchQueue.main.async {
+            let row = indexPath.row
             let roundNavController = StoryboardScene.Game.roundVC.instantiate()
-            (roundNavController.topViewController as? RoundViewController)?.inject(game: self.game, round: self.game.rounds[indexPath.row])
+            (roundNavController.topViewController as? RoundViewController)?.inject(game: self.game,
+                                                                                   round: self.game.rounds[row])
             self.parent?.present(roundNavController, animated: true)
         }
     }
