@@ -9,6 +9,7 @@
 "new_game.declarations" = "Declarations";
 "new_game.coinche" = "Coinche";
 "new_game.start_game" = "Start game";
+"new_game.rotation_turn" = "Clockwise turn order";
 "game.bidding" = "Who's bidding?";
 "game.round.save" = "Save";
 "game.round.enter_score" = "Score";

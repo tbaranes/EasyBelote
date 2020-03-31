@@ -61,6 +61,8 @@ internal enum L10n {
     internal static let nbPoints = L10n.tr("Localizable", "new_game.nb_points")
     /// 1001
     internal static let nbPointsPlaceholder = L10n.tr("Localizable", "new_game.nb_points_placeholder")
+    /// Turn order (clockwise)
+    internal static let rotationTurn = L10n.tr("Localizable", "new_game.rotation_turn")
     /// Start game
     internal static let startGame = L10n.tr("Localizable", "new_game.start_game")
     internal enum Players {

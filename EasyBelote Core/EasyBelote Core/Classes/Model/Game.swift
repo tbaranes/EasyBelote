@@ -23,6 +23,7 @@ public final class Game: NSObject {
     public var nbPoints: Int
     public var isDeclarationsEnabled: Bool
     public var isPlayingCoinche: Bool
+    public var isRotationTurnClockwise: Bool
 
     @objc dynamic public var rounds = [Round]()
     @objc dynamic public var currentDealerId: Int
@@ -36,6 +37,7 @@ public final class Game: NSObject {
             teams = [[Player(id: 0), Player(id: 2)], [Player(id: 1), Player(id: 3)]]
         }
         nbPoints = Defaults.nbPoints
+        isRotationTurnClockwise = Defaults.isRotationTurnClockwise
         isDeclarationsEnabled = Defaults.isDeclarationsEnabled
         isPlayingCoinche = Defaults.isPlayingCoinche
 
@@ -49,6 +51,7 @@ public final class Game: NSObject {
         Defaults[\.nbPoints] = nbPoints
         Defaults[\.isDeclarationsEnabled] = isDeclarationsEnabled
         Defaults[\.isPlayingCoinche] = isPlayingCoinche
+        Defaults[\.isRotationTurnClockwise] = isRotationTurnClockwise
 
         gameState = GameState.playing.rawValue
     }
@@ -88,7 +91,11 @@ extension Game {
 extension Game {
 
     public func moveToNextDealer() {
-        currentDealerId = (currentDealerId - 1 < 0 ? teams.count * 2 : currentDealerId) - 1
+        var nextDealerId = currentDealerId + (isRotationTurnClockwise ? -1 : 1)
+        if nextDealerId > 3 || nextDealerId < 0 {
+            nextDealerId = isRotationTurnClockwise ? 3 : 0
+        }
+        currentDealerId = nextDealerId
     }
 
     public func updateRound(_ round: Round) {

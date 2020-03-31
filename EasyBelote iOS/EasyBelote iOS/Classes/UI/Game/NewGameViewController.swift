@@ -27,6 +27,9 @@ final class NewGameViewController: UIViewController {
     @IBOutlet private weak var labelCoinche: UILabel!
     @IBOutlet private weak var switchCoinche: UISwitch!
 
+    @IBOutlet private weak var labelRotationTurn: UILabel!
+    @IBOutlet private weak var switchRotationTurn: UISwitch!
+
     @IBOutlet private weak var btnStartGame: UIButton!
 
     // MARK: Properties
@@ -88,6 +91,9 @@ extension NewGameViewController {
 
         labelCoinche.text = L10n.NewGame.coinche.uppercased()
         btnStartGame.setTitle(L10n.NewGame.startGame, for: .normal)
+
+        labelRotationTurn.text = L10n.NewGame.rotationTurn.uppercased()
+        btnStartGame.setTitle(L10n.NewGame.startGame, for: .normal)
     }
 
     private func configureGame() {
@@ -97,6 +103,7 @@ extension NewGameViewController {
         }
         switchDeclarations.isOn = game.isDeclarationsEnabled
         switchCoinche.isOn = game.isPlayingCoinche
+        switchRotationTurn.isOn = game.isRotationTurnClockwise
     }
 
 }
@@ -118,6 +125,7 @@ extension NewGameViewController {
         textFieldNbPoints.addTarget(self, action: #selector(nbPointsEditingChanged(_:)), for: .editingChanged)
         switchDeclarations.addTarget(self, action: #selector(declarationsValueChanged), for: .valueChanged)
         switchCoinche.addTarget(self, action: #selector(coincheValueChanged), for: .valueChanged)
+        switchRotationTurn.addTarget(self, action: #selector(rotationTurnChanged), for: .valueChanged)
         btnStartGame.addTarget(self, action: #selector(startGamePressed), for: .touchUpInside)
     }
 
@@ -145,6 +153,11 @@ extension NewGameViewController {
     @objc
     private func coincheValueChanged(_ sender: UISwitch) {
         game.isPlayingCoinche = sender.isOn
+    }
+
+    @objc
+    private func rotationTurnChanged(_ sender: UISwitch) {
+        game.isRotationTurnClockwise = sender.isOn
     }
 
     @objc

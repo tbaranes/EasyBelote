@@ -9,6 +9,7 @@
 "new_game.declarations" = "Annonces";
 "new_game.coinche" = "Coinche";
 "new_game.start_game" = "Démarrer";
+"new_game.rotation_turn" = "Sens de rotation horaire";
 "game.bidding" = "Qui prend ?";
 "game.round.save" = "Enregistrer";
 "game.round.enter_score" = "Score";
