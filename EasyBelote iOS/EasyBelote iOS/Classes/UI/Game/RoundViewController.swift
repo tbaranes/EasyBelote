@@ -70,7 +70,10 @@ final class RoundViewController: UIViewController {
 extension RoundViewController {
 
     private func configureNavigationBar() {
-        let rightBarButton = UIBarButtonItem(image: Asset.genericClose.image, style: .plain, target: self, action: #selector(closePressed))
+        let rightBarButton = UIBarButtonItem(image: Asset.genericClose.image,
+                                             style: .plain,
+                                             target: self,
+                                             action: #selector(closePressed))
         rightBarButton.tintColor = ColorName.easyBeloteGray.color
         navigationItem.rightBarButtonItem = rightBarButton
     }
@@ -119,7 +122,8 @@ extension RoundViewController {
     }
 
     private func observeContractDeclarations() {
-        let token = round.contract.observe(\.declarationsObservable, options: [.initial, .new]) { [unowned self] object, _ in
+        let token = round.contract.observe(\.declarationsObservable,
+                                           options: [.initial, .new]) { [unowned self] object, _ in
             self.viewCoinche.configure(declarationsSelected: object.declarations)
         }
         tokens.append(token)
@@ -154,7 +158,9 @@ extension RoundViewController {
 extension RoundViewController {
 
     private func makeActions() {
-        viewCoinche.textFieldContract.addTarget(self, action: #selector(textFieldContractEditingChanged(_:)), for: .editingChanged)
+        viewCoinche.textFieldContract.addTarget(self,
+                                                action: #selector(textFieldContractEditingChanged(_:)),
+                                                for: .editingChanged)
         viewCoinche.declarationButtons.forEach { btn in
             btn.addTarget(self, action: #selector(contractDeclarationPressed(_:)), for: .touchUpInside)
         }

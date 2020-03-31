@@ -62,11 +62,16 @@ extension NewGameViewController {
     private func configureInterface() {
         labelPlayers.forEach {
             switch $0.tag {
-            case 0: $0.text = L10n.NewGame.Players.you.uppercased()
-            case 3: $0.text = L10n.NewGame.Players.onLeft.uppercased()
-            case 2: $0.text = L10n.NewGame.Players.yourPartner.uppercased()
-            case 1: $0.text = L10n.NewGame.Players.onRight.uppercased()
-            default: break
+            case 0:
+                $0.text = L10n.NewGame.Players.you.uppercased()
+            case 3:
+                $0.text = L10n.NewGame.Players.onLeft.uppercased()
+            case 2:
+                $0.text = L10n.NewGame.Players.yourPartner.uppercased()
+            case 1:
+                $0.text = L10n.NewGame.Players.onRight.uppercased()
+            default:
+                break
             }
         }
 

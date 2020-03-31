@@ -71,7 +71,7 @@ final class GameViewController: UIViewController {
 extension GameViewController {
 
     public var isHistoryOpened: Bool {
-        return btnToggleRoundsHistory.transform != .identity
+        btnToggleRoundsHistory.transform != .identity
     }
 
     private func configureGame() {
@@ -163,7 +163,8 @@ extension GameViewController {
 
     private func makeActions() {
         btnToggleRoundsHistory.addTarget(self, action: #selector(toggleHistoryPressed), for: .touchUpInside)
-        toggleHistoryTapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(toggleHistoryPressed))
+        toggleHistoryTapGestureRecognizer = UITapGestureRecognizer(target: self,
+                                                                   action: #selector(toggleHistoryPressed))
         viewTotalScores.addGestureRecognizer(toggleHistoryTapGestureRecognizer)
 
         viewPlayers.forEach {
@@ -185,7 +186,8 @@ extension GameViewController {
 
         UIView.animate(withDuration: duration) {
             self.btnToggleRoundsHistory.transform = isOpening ? CGAffineTransform(rotationAngle: CGFloat.pi) : .identity
-            self.viewScores.transform = isOpening ? CGAffineTransform(translationX: 0, y: -self.viewScores.frame.minY) : .identity
+            self.viewScores.transform = isOpening ? CGAffineTransform(translationX: 0,
+                                                                      y: -self.viewScores.frame.minY) : .identity
             self.delegate?.historyStateDidChange(isOpened: isOpening)
         }
     }

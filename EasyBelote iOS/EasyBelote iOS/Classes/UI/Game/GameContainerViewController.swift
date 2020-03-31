@@ -60,7 +60,10 @@ final class GameContainerViewController: UIViewController {
 extension GameContainerViewController {
 
     private func configureNavigationBar() {
-        let rightBarButton = UIBarButtonItem(image: Asset.genericClose.image, style: .plain, target: self, action: #selector(closePressed))
+        let rightBarButton = UIBarButtonItem(image: Asset.genericClose.image,
+                                             style: .plain,
+                                             target: self,
+                                             action: #selector(closePressed))
         navigationItem.rightBarButtonItem = rightBarButton
 
         if game.gameState == GameState.playing.rawValue {

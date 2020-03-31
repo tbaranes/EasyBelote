@@ -3,26 +3,26 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E208DA1424333FD500ADF766 /* Defaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = E208DA1324333FD500ADF766 /* Defaults.swift */; };
 		E2181A8722116B7100EF163A /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2181A8622116B7100EF163A /* Game.swift */; };
-		E2181A8A22116CCF00EF163A /* SwiftyUserDefaults.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E2181A8922116CCF00EF163A /* SwiftyUserDefaults.framework */; };
 		E2181A982211E28000EF163A /* Round.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2181A972211E28000EF163A /* Round.swift */; };
 		E2181A9B2211E33500EF163A /* Declaration.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2181A9A2211E33500EF163A /* Declaration.swift */; };
 		E2181A9D2211E3AF00EF163A /* TeamRound.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2181A9C2211E3AF00EF163A /* TeamRound.swift */; };
 		E2181A9F2211E4F100EF163A /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2181A9E2211E4F100EF163A /* Player.swift */; };
 		E23C25C42216C8EA004508F0 /* Belote.swift in Sources */ = {isa = PBXBuildFile; fileRef = E23C25C32216C8EA004508F0 /* Belote.swift */; };
+		E2658827243332F100AB79C7 /* SwiftyUserDefaults in Frameworks */ = {isa = PBXBuildFile; productRef = E2658826243332F100AB79C7 /* SwiftyUserDefaults */; };
 		E2AC2E5021E636D100FB14DA /* Sample_Core.h in Headers */ = {isa = PBXBuildFile; fileRef = E2AC2E4E21E636D100FB14DA /* Sample_Core.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		E2AC2E7121E63DE300FB14DA /* AppConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2AC2E7021E63DE300FB14DA /* AppConfiguration.swift */; };
 		E2AC2EB321E64ABD00FB14DA /* ArrayExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2AC2EB221E64ABD00FB14DA /* ArrayExtension.swift */; };
 		E2F5EA2F2226C61E00AAD2C6 /* RoundContract.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2F5EA2E2226C61E00AAD2C6 /* RoundContract.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		E208DA1324333FD500ADF766 /* Defaults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Defaults.swift; sourceTree = "<group>"; };
 		E2181A8622116B7100EF163A /* Game.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Game.swift; sourceTree = "<group>"; };
-		E2181A8922116CCF00EF163A /* SwiftyUserDefaults.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftyUserDefaults.framework; path = ../Carthage/Build/iOS/SwiftyUserDefaults.framework; sourceTree = "<group>"; };
 		E2181A972211E28000EF163A /* Round.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Round.swift; sourceTree = "<group>"; };
 		E2181A9A2211E33500EF163A /* Declaration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Declaration.swift; sourceTree = "<group>"; };
 		E2181A9C2211E3AF00EF163A /* TeamRound.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamRound.swift; sourceTree = "<group>"; };
@@ -31,7 +31,6 @@
 		E2AC2E4B21E636D100FB14DA /* EasyBelote_Core_iOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = EasyBelote_Core_iOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E2AC2E4E21E636D100FB14DA /* Sample_Core.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Sample_Core.h; sourceTree = "<group>"; };
 		E2AC2E4F21E636D100FB14DA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		E2AC2E7021E63DE300FB14DA /* AppConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppConfiguration.swift; sourceTree = "<group>"; };
 		E2AC2EB221E64ABD00FB14DA /* ArrayExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArrayExtension.swift; sourceTree = "<group>"; };
 		E2F5EA2E2226C61E00AAD2C6 /* RoundContract.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundContract.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -41,7 +40,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E2181A8A22116CCF00EF163A /* SwiftyUserDefaults.framework in Frameworks */,
+				E2658827243332F100AB79C7 /* SwiftyUserDefaults in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -51,6 +50,7 @@
 		E2181A8522116B6C00EF163A /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				E2181A992211E32E00EF163A /* Enums */,
 				E2181A8622116B7100EF163A /* Game.swift */,
 				E2181A9E2211E4F100EF163A /* Player.swift */,
 				E2181A972211E28000EF163A /* Round.swift */,
@@ -73,7 +73,6 @@
 			children = (
 				E2AC2E4D21E636D100FB14DA /* EasyBelote Core */,
 				E2AC2E4C21E636D100FB14DA /* Products */,
-				E2AC2E5D21E6387900FB14DA /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -106,21 +105,11 @@
 		E2AC2E5721E6370200FB14DA /* Classes */ = {
 			isa = PBXGroup;
 			children = (
-				E2181A992211E32E00EF163A /* Enums */,
 				E2181A8522116B6C00EF163A /* Model */,
-				E2AC2E6F21E63DD500FB14DA /* Protocols */,
 				E2AC2EB121E64AAE00FB14DA /* Extensions */,
 				E2AC2E6821E6399100FB14DA /* Others */,
 			);
 			path = Classes;
-			sourceTree = "<group>";
-		};
-		E2AC2E5D21E6387900FB14DA /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				E2181A8922116CCF00EF163A /* SwiftyUserDefaults.framework */,
-			);
-			name = Frameworks;
 			sourceTree = "<group>";
 		};
 		E2AC2E6821E6399100FB14DA /* Others */ = {
@@ -131,18 +120,11 @@
 			path = Others;
 			sourceTree = "<group>";
 		};
-		E2AC2E6F21E63DD500FB14DA /* Protocols */ = {
-			isa = PBXGroup;
-			children = (
-				E2AC2E7021E63DE300FB14DA /* AppConfiguration.swift */,
-			);
-			path = Protocols;
-			sourceTree = "<group>";
-		};
 		E2AC2EB121E64AAE00FB14DA /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
 				E2AC2EB221E64ABD00FB14DA /* ArrayExtension.swift */,
+				E208DA1324333FD500ADF766 /* Defaults.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -175,6 +157,9 @@
 			dependencies = (
 			);
 			name = "EasyBelote Core iOS";
+			packageProductDependencies = (
+				E2658826243332F100AB79C7 /* SwiftyUserDefaults */,
+			);
 			productName = "Sample Core";
 			productReference = E2AC2E4B21E636D100FB14DA /* EasyBelote_Core_iOS.framework */;
 			productType = "com.apple.product-type.framework";
@@ -203,6 +188,9 @@
 				Base,
 			);
 			mainGroup = E2AC2E4121E636D100FB14DA;
+			packageReferences = (
+				E2658825243332F100AB79C7 /* XCRemoteSwiftPackageReference "SwiftyUserDefaults" */,
+			);
 			productRefGroup = E2AC2E4C21E636D100FB14DA /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -234,8 +222,8 @@
 				E2181A8722116B7100EF163A /* Game.swift in Sources */,
 				E2181A9B2211E33500EF163A /* Declaration.swift in Sources */,
 				E2181A9F2211E4F100EF163A /* Player.swift in Sources */,
+				E208DA1424333FD500ADF766 /* Defaults.swift in Sources */,
 				E2181A982211E28000EF163A /* Round.swift in Sources */,
-				E2AC2E7121E63DE300FB14DA /* AppConfiguration.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -374,10 +362,7 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SRCROOT)/../Carthage/Build/iOS",
-					"$(inherited)",
-				);
+				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				INFOPLIST_FILE = "$(SRCROOT)/EasyBelote Core/Supporting Files/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
@@ -406,10 +391,7 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SRCROOT)/../Carthage/Build/iOS",
-					"$(inherited)",
-				);
+				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				INFOPLIST_FILE = "$(SRCROOT)/EasyBelote Core/Supporting Files/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
@@ -449,6 +431,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		E2658825243332F100AB79C7 /* XCRemoteSwiftPackageReference "SwiftyUserDefaults" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/sunshinejr/SwiftyUserDefaults";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = "5.0.0-alpha.1";
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		E2658826243332F100AB79C7 /* SwiftyUserDefaults */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = E2658825243332F100AB79C7 /* XCRemoteSwiftPackageReference "SwiftyUserDefaults" */;
+			productName = SwiftyUserDefaults;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = E2AC2E4221E636D100FB14DA /* Project object */;
 }

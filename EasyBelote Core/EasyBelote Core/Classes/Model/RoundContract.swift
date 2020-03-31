@@ -14,7 +14,7 @@ public final class RoundContract: NSObject {
 
     @objc dynamic public var points: Int {
         didSet {
-            if points != Belote.capotPoints && declarations.contains(.capot) {
+            if points != Belote.capotPoints.value && declarations.contains(.capot) {
                 toggleDeclaration(.capot)
             }
         }
@@ -32,7 +32,7 @@ public final class RoundContract: NSObject {
     // MARK: Life Cycle
 
     init(isPlayingCoinche: Bool) {
-        points = isPlayingCoinche ? -1 : Belote.biddingSuccess
+        points = isPlayingCoinche ? -1 : Belote.biddingSuccess.value
     }
 }
 
@@ -49,7 +49,7 @@ extension RoundContract {
         } else {
             declarationsObservable.append(declaration.rawValue)
             if declaration == .capot {
-                points = Belote.capotPoints
+                points = Belote.capotPoints.value
             }
             if declaration == .surcoinche && !declarations.contains(.coinche) {
                 toggleDeclaration(.coinche)
