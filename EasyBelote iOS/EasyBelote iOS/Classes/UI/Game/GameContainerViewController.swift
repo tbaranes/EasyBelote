@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import SAConfettiView
 import EasyBelote_Core_iOS
 
 protocol GameContainerDelegate: AnyObject {
@@ -112,7 +111,7 @@ extension GameContainerViewController {
 
     @objc
     private func closePressed() {
-        if gameVC.isHistoryOpened && !viewConfetti.isActive() {
+        if gameVC.isHistoryOpened {
             gameVC.toggleHistoryPressed()
         } else {
             dismiss(animated: true)

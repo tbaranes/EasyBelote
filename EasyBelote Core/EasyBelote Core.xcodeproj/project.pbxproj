@@ -3,16 +3,16 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 54;
 	objects = {
 
 /* Begin PBXBuildFile section */
 		E2181A8722116B7100EF163A /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2181A8622116B7100EF163A /* Game.swift */; };
-		E2181A8A22116CCF00EF163A /* SwiftyUserDefaults.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E2181A8922116CCF00EF163A /* SwiftyUserDefaults.framework */; };
 		E2181A982211E28000EF163A /* Round.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2181A972211E28000EF163A /* Round.swift */; };
 		E2181A9B2211E33500EF163A /* Declaration.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2181A9A2211E33500EF163A /* Declaration.swift */; };
 		E2181A9D2211E3AF00EF163A /* TeamRound.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2181A9C2211E3AF00EF163A /* TeamRound.swift */; };
 		E2181A9F2211E4F100EF163A /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2181A9E2211E4F100EF163A /* Player.swift */; };
+		E22159312CA70812007BCADA /* SwiftyUserDefaults in Frameworks */ = {isa = PBXBuildFile; productRef = E22159302CA70812007BCADA /* SwiftyUserDefaults */; };
 		E23C25C42216C8EA004508F0 /* Belote.swift in Sources */ = {isa = PBXBuildFile; fileRef = E23C25C32216C8EA004508F0 /* Belote.swift */; };
 		E2AC2E5021E636D100FB14DA /* Sample_Core.h in Headers */ = {isa = PBXBuildFile; fileRef = E2AC2E4E21E636D100FB14DA /* Sample_Core.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		E2AC2E7121E63DE300FB14DA /* AppConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2AC2E7021E63DE300FB14DA /* AppConfiguration.swift */; };
@@ -22,7 +22,6 @@
 
 /* Begin PBXFileReference section */
 		E2181A8622116B7100EF163A /* Game.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Game.swift; sourceTree = "<group>"; };
-		E2181A8922116CCF00EF163A /* SwiftyUserDefaults.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftyUserDefaults.framework; path = ../Carthage/Build/iOS/SwiftyUserDefaults.framework; sourceTree = "<group>"; };
 		E2181A972211E28000EF163A /* Round.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Round.swift; sourceTree = "<group>"; };
 		E2181A9A2211E33500EF163A /* Declaration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Declaration.swift; sourceTree = "<group>"; };
 		E2181A9C2211E3AF00EF163A /* TeamRound.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamRound.swift; sourceTree = "<group>"; };
@@ -41,7 +40,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E2181A8A22116CCF00EF163A /* SwiftyUserDefaults.framework in Frameworks */,
+				E22159312CA70812007BCADA /* SwiftyUserDefaults in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -73,7 +72,6 @@
 			children = (
 				E2AC2E4D21E636D100FB14DA /* EasyBelote Core */,
 				E2AC2E4C21E636D100FB14DA /* Products */,
-				E2AC2E5D21E6387900FB14DA /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -113,14 +111,6 @@
 				E2AC2E6821E6399100FB14DA /* Others */,
 			);
 			path = Classes;
-			sourceTree = "<group>";
-		};
-		E2AC2E5D21E6387900FB14DA /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				E2181A8922116CCF00EF163A /* SwiftyUserDefaults.framework */,
-			);
-			name = Frameworks;
 			sourceTree = "<group>";
 		};
 		E2AC2E6821E6399100FB14DA /* Others */ = {
@@ -203,6 +193,9 @@
 				Base,
 			);
 			mainGroup = E2AC2E4121E636D100FB14DA;
+			packageReferences = (
+				E221592F2CA70812007BCADA /* XCRemoteSwiftPackageReference "SwiftyUserDefaults" */,
+			);
 			productRefGroup = E2AC2E4C21E636D100FB14DA /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -380,7 +373,7 @@
 				);
 				INFOPLIST_FILE = "$(SRCROOT)/EasyBelote Core/Supporting Files/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -412,7 +405,7 @@
 				);
 				INFOPLIST_FILE = "$(SRCROOT)/EasyBelote Core/Supporting Files/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -449,6 +442,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		E221592F2CA70812007BCADA /* XCRemoteSwiftPackageReference "SwiftyUserDefaults" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/sunshinejr/SwiftyUserDefaults";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.3.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		E22159302CA70812007BCADA /* SwiftyUserDefaults */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = E221592F2CA70812007BCADA /* XCRemoteSwiftPackageReference "SwiftyUserDefaults" */;
+			productName = SwiftyUserDefaults;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = E2AC2E4221E636D100FB14DA /* Project object */;
 }
