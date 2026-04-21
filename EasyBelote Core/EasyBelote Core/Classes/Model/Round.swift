@@ -127,24 +127,56 @@ extension Round {
             return
         }
 
-        let teamNoBidder = teams.first { !$0.isBidder }
-        guard let teamBidder = teams.first(where: { $0.isBidder }), teamBidder.score < contract.points else {
+        guard let teamBidder = teams.first(where: { $0.isBidder }),
+              let teamNoBidder = teams.first(where: { !$0.isBidder }) else {
             return
         }
 
-        if teamBidder.score == teamNoBidder?.score {
-            nextRoundPointsHanging = teamBidder.score
-            teamBidder.score = 0
+        let bidderBelote = beloteRebelotePoints(for: teamBidder)
+
+        if isPlayingCoinche {
+            // In coinche, bidder's belote counts toward meeting the contract
+            guard (teamBidder.score + bidderBelote) < contract.points else {
+                return
+            }
+
+            if teamBidder.score == teamNoBidder.score {
+                nextRoundPointsHanging = teamBidder.score
+                teamBidder.score = 0
+            } else {
+                teamBidder.score = 0
+                if teamNoBidder.score != Belote.capotPoints {
+                    teamNoBidder.score = Belote.roundPoints
+                }
+            }
         } else {
-            teamBidder.score = 0
-            if teamNoBidder?.score != Belote.capotPoints {
-                teamNoBidder?.score = Belote.roundPoints
+            // In classic, compare effective scores including belote/rebelote
+            let defenderBelote = beloteRebelotePoints(for: teamNoBidder)
+            let bidderTotal = teamBidder.score + bidderBelote
+            let defenderTotal = teamNoBidder.score + defenderBelote
+
+            if bidderTotal > defenderTotal {
+                return // Contract met
+            }
+
+            if bidderTotal == defenderTotal {
+                nextRoundPointsHanging = teamBidder.score
+                teamBidder.score = 0
+            } else {
+                teamBidder.score = 0
+                if teamNoBidder.score != Belote.capotPoints {
+                    teamNoBidder.score = Belote.roundPoints
+                }
             }
         }
     }
 
     private var hasCapot: Bool {
         return !teams.allSatisfy { $0.declarations.contains(.capot) == false }
+    }
+
+    private func beloteRebelotePoints(for team: TeamRound?) -> Int {
+        return team?.declarations.contains(.belote) == true ? Declaration.belote.pointsValue : 0
     }
 
 }
@@ -163,24 +195,48 @@ extension Round {
         var team2Score = team2.score + (team2 == teamWinning ? pointsHanging : 0)
         team1Score += team1.declarations.reduce(0) { $0 + $1.pointsValue }
         team2Score += team2.declarations.reduce(0) { $0 + $1.pointsValue }
+
         if isPlayingCoinche {
+            // Defender's belote is a bonus (not multiplied), so remove it before multiplication
+            let teamDefender = teams.first { !$0.isBidder }
+            let defenderBelote = beloteRebelotePoints(for: teamDefender)
+            if team1 == teamDefender {
+                team1Score -= defenderBelote
+            } else {
+                team2Score -= defenderBelote
+            }
+
             team1Score += teamWinning == team1 ? contract.points : 0
             team2Score += teamWinning == team2 ? contract.points : 0
+
+            team1Score *= teamWinning == team1 ? contract.scoreMultiplier : 1
+            team2Score *= teamWinning == team2 ? contract.scoreMultiplier : 1
+
+            // Add back defender's belote as flat bonus
+            if team1 == teamDefender {
+                team1Score += defenderBelote
+            } else {
+                team2Score += defenderBelote
+            }
         }
 
-        team1Score *= teamWinning == team1 ? contract.scoreMultiplier : 1
-        team2Score *= teamWinning == team2 ? contract.scoreMultiplier : 1
         return (team1Score, team2Score)
     }
 
     private func findTeamWinning(team1: TeamRound, team2: TeamRound) -> TeamRound {
-        let teamResult: [(team: TeamRound, score: Int, isBidder: Bool)] = [(team1, team1.score, team1.isBidder),
-                                                                           (team2, team2.score, team2.isBidder)]
-        var teamWinningHangingPoints = teamResult.first { $0.isBidder && $0.score >= contract.points }?.team
-        if teamWinningHangingPoints == nil {
-            teamWinningHangingPoints = teamResult.first { !$0.isBidder }?.team
+        let teamBidder = team1.isBidder ? team1 : team2
+        let teamDefender = team1.isBidder ? team2 : team1
+        let bidderBelote = beloteRebelotePoints(for: teamBidder)
+
+        let bidderWins: Bool
+        if isPlayingCoinche {
+            bidderWins = (teamBidder.score + bidderBelote) >= contract.points
+        } else {
+            let defenderBelote = beloteRebelotePoints(for: teamDefender)
+            bidderWins = (teamBidder.score + bidderBelote) > (teamDefender.score + defenderBelote)
         }
-        return teamWinningHangingPoints!
+
+        return bidderWins ? teamBidder : teamDefender
     }
 
 }
